@@ -7,7 +7,7 @@ WORKDIR /app
 RUN chown appuser:appgroup /app
 
 COPY package.json package-lock.json ./
-#RUN chown appuser:appgroup package.json package-lock.json
+RUN chown appuser:appgroup package.json package-lock.json
 
 USER appuser
 RUN npm install --frozen-lockfile
