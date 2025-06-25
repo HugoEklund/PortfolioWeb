@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <h1>Hannes luktar bajs</h1>
+      <h1>Ny build test</h1>
     </>
   )
 }
