@@ -12,7 +12,7 @@ function App() {
 
       <div className="video-container">
         <video
-          src="assets/gas.mov"
+          src="/assets/gas.mov"
           controls
           className="video-player"
         >
