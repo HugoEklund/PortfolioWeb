@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="app-container">
       <h1 className="app-heading">
-        Om du läser detta är du cringe
+        this shit loud asl twin
       </h1>
 
       <div className="video-container">
