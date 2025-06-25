@@ -5,9 +5,20 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <h1>Om du läser detta är du cringe</h1>
-    </>
+    <div className="app-container">
+      <h1 className="app-heading">
+        Om du läser detta är du cringe
+      </h1>
+
+      <div className="video-container">
+        <video
+          src="assets/gas.mov"
+          controls
+          className="video-player"
+        >
+        </video>
+      </div>
+    </div>
   )
 }
 
