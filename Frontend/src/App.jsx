@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <h1>Testar nya configs</h1>
+      <h1>Testar configs</h1>
     </>
   )
 }
