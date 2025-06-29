@@ -1,111 +1,440 @@
-.social-icon-img {
-    width: 1.75rem; /* Ökad storlek för sociala ikoner för bättre synlighet */
-    height: 1.75rem; /* Ökad storlek för sociala ikoner för bättre synlighet */
-    object-fit: contain; /* Skala bilden för att passa inom rutan utan att beskära, bibehåller proportioner */
-}
+/* App.css */
 
-/* Footer */
-.main-footer {
-    background-color: #111827;
-    color: #9ca3af;
+/* --- Base Section Styling --- */
+/* Dessa stilar definierar grundläggande padding och max-bredd för alla sektioner.
+   De använder CSS-variabler som är definierade i index.css. */
+.section-container {
+    max-width: 72rem; /* motsvarar max-w-6xl i Tailwind */
+    margin: 0 auto;
     padding: 2rem 1rem;
-    text-align: center;
-    border-top: 1px solid #374151;
 }
 
 @media (min-width: 640px) {
-    .main-footer {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+    .section-container {
+        padding: 2.5rem 1.5rem;
     }
 }
 
 @media (min-width: 1024px) {
-    .main-footer {
-        padding-left: 2rem;
-        padding-right: 2rem;
+    .section-container {
+        padding: 3rem 2rem;
     }
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* --- Headings --- */
+/* Stilar för sektionsrubriker, inklusive accentfärgen. */
+.section-heading {
+    font-size: 2.5rem; /* Larger heading */
+    font-weight: 700;
+    color: white;
+    margin-bottom: 2.5rem; /* More space below headings */
+}
+
+.section-heading-accent {
+    color: var(--accent-main);
+    border-bottom: 4px solid var(--accent-main);
+    display: inline-block; /* För att border-bottom ska fungera som en understrykning */
+    padding-bottom: 0.5rem;
+}
+
+/* --- Navigation Bar --- */
+/* Specifik styling för navigationsfältet och dess element. */
+.main-header {
+    background-color: var(--medium-grey-bg);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.navbar-logo {
+    height: 2.5rem;
+    margin-right: 0.75rem;
+    filter: brightness(0) invert(1); /* Ensure logo is white/light */
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem; /* More space between links */
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    color: var(--secondary-text);
+    font-size: 1.1rem; /* Slightly larger text */
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.language-toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.language-toggle-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.language-flag {
+    width: 1.75rem;
+    height: 1.75rem;
+    object-fit: contain;
+}
+
+/* --- Hero Section --- */
+/* Stilar för "Hero"-sektionen, inklusive profilbild och sociala ikoner. */
+.hero-section {
+    background-color: var(--dark-grey-bg);
+    padding: 8rem 1rem; /* More vertical padding */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 4rem); /* Ensure it takes up most of the viewport height */
+}
+
+.hero-content-wrapper {
+    display: flex;
+    flex-direction: column; /* Standard för mobil */
+    gap: 3rem; /* Mer utrymme */
+    align-items: center;
+    max-width: 72rem;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .hero-content-wrapper {
+        flex-direction: row; /* Sid-vid-sida på större skärmar */
+        text-align: left;
+        gap: 5rem;
+        justify-content: space-between;
+    }
+    .hero-text-content {
+        flex: 1;
+        max-width: 60%; /* Kontrollera bredden för texten */
+    }
+    .hero-image-wrapper {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end; /* Flytta bilden till höger */
+    }
+}
+
+.hero-greeting {
+    font-size: 1.75rem; /* Slightly larger */
+    font-weight: 500;
+    color: var(--secondary-text);
+    margin-bottom: 0.75rem;
+}
+
+.hero-name {
+    font-size: 3.5rem; /* Bigger name */
+    font-weight: 800; /* Bolder */
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-title {
+    font-size: 1.5rem; /* Larger title */
+    font-weight: 400;
+    color: var(--light-grey-text);
+    margin-bottom: 3rem; /* More space before social icons */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Centrera ikoner på mobil */
+    gap: 1.5rem; /* Mer utrymme mellan ikoner */
+}
+
+@media (min-width: 768px) {
+    .social-icons {
+        justify-content: flex-start; /* Vänsterjustera ikoner på större skärmar */
+    }
+}
+
+.social-icon {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px); /* Lyfter ikonen vid hover */
+}
+
+.social-icon-img {
+    width: 2rem; /* Ännu större för tydlighet */
+    height: 2rem;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Ensure icons are light/white */
+}
+
+.hero-image-container {
+    width: 250px; /* Specific width */
+    height: 250px; /* Specific height */
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--accent-main); /* Framträdande ram */
+    box-shadow: 0 0 20px rgba(0, 190, 177, 0.5); /* Glowing effect */
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.hero-image:hover {
+    transform: scale(1.05); /* Zoomar in lite vid hover */
+    opacity: 0.95;
+}
+
+/* --- About Me Section --- */
+/* Stilar för "About Me"-sektionen. */
+.about-section {
+    background-color: var(--medium-grey-bg);
+    padding: 6rem 0; /* More vertical padding */
+}
+
+.about-text {
+    font-size: 1.15rem; /* Slightly larger text */
+    line-height: 1.8;
+    max-width: 48rem;
+    margin: 0 auto;
+    color: var(--light-grey-text);
+}
+
+/* --- Skills Section --- */
+/* Stilar för "Skills"-sektionen och de individuella färdigheterna. */
+.skills-section {
+    background-color: var(--dark-grey-bg);
+    padding: 6rem 0; /* More vertical padding */
+}
+
+.skills-grid {
+    display: flex; /* Använd flexbox för att placera dem i en rad */
+    flex-wrap: wrap; /* Låt dem bryta rad om det behövs */
+    justify-content: center;
+    gap: 1.5rem; /* Mer utrymme mellan varje färdighet */
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.skill-item {
+    background-color: var(--medium-grey-bg);
+    color: white;
+    padding: 0.8rem 1.5rem; /* Mer padding */
+    border-radius: 0.75rem; /* Rundare hörn */
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    border: 1px solid var(--border-color);
+}
+
+.skill-item:hover {
+    transform: translateY(-5px) scale(1.02); /* Lyfter och förstorar vid hover */
+    background-color: var(--accent-dark); /* Accentfärg vid hover */
+    border-color: var(--accent-main);
+}
+
+.skill-text {
+    white-space: nowrap; /* Förhindra radbrytningar inom färdighetsnamn */
+}
+
+
+/* --- Projects Section --- */
+/* Stilar för "Projects"-sektionen och de individuella projektkorten. */
+.projects-section {
+    background-color: var(--medium-grey-bg);
+    padding: 6rem 0; /* More vertical padding */
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Anpassar sig bättre */
+    gap: 2.5rem; /* Mer utrymme mellan projektkorten */
+}
+
+.project-card {
+    background-color: var(--dark-grey-bg);
+    border-radius: 1rem; /* Rundare hörn */
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Mer framträdande skugga */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Säkerställer att korten är lika höga i flexbox */
+}
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.02); /* Lyfter och förstorar kortet */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 190, 177, 0.3); /* Lägg till "glöd" */
+}
+
+.project-image {
+    width: 100%;
+    height: 200px; /* Fast höjd för bilder */
+    object-fit: cover;
+    display: block;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.project-card-content {
+    padding: 1.5rem;
+    flex-grow: 1; /* Gör att innehållet fyller ut tillgängligt utrymme */
+    display: flex;
+    flex-direction: column;
+}
+
+.project-title {
+    font-size: 1.75rem; /* Larger title */
+    font-weight: 700;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.project-description {
+    font-size: 1rem;
+    color: var(--secondary-text);
+    margin-bottom: 1.25rem;
+    flex-grow: 1; /* Se till att beskrivningen tar plats */
+}
+
+.project-link {
+    display: inline-block;
+    color: var(--accent-main);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    margin-top: auto; /* Push link to the bottom */
+}
+
+.project-link:hover {
+    color: var(--accent-dark);
+    transform: translateX(5px); /* Flyttar länken lite vid hover */
+}
+
+/* --- Footer --- */
+/* Stilar för sidfoten. */
+.main-footer {
+    background-color: var(--dark-grey-bg);
+    color: var(--secondary-text);
+    padding: 2.5rem 1rem; /* Mer padding */
+    text-align: center;
+    border-top: 1px solid var(--border-color);
 }
 
 .footer-text-secondary {
-    font-size: 0.875rem;
-    color: #6b7280;
-    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--tertiary-text);
+    margin-top: 0.75rem;
 }
 
-/* Responsive Design Adjustments */
+/* --- Responsive Design Adjustments --- */
+/* Media queries för att anpassa layouten för mindre skärmar. */
 @media (max-width: 768px) {
     .navbar {
-        flex-wrap: wrap;
-        gap: 0.5rem;
+        flex-direction: column;
+        align-items: flex-start;
     }
-    
     .nav-links {
         flex-wrap: wrap;
-        gap: 0.5rem;
+        justify-content: center;
+        width: 100%;
+        margin-top: 1rem;
     }
-    
+    .nav-button {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+    }
     .hero-section {
-        padding-top: 8rem;
-        text-align: center;
+        padding: 6rem 1rem;
     }
-    
-    .hero-content-wrapper {
-        flex-direction: column;
-        gap: 2rem;
+    .hero-name {
+        font-size: 2.5rem;
     }
-    
-    .hero-text-content {
-        width: 100%;
+    .hero-title {
+        font-size: 1.15rem;
     }
-    
-    .hero-image-wrapper {
-        width: 100%;
+    .social-icons {
         justify-content: center;
     }
-    
-    .section-heading {
-        font-size: 1.875rem;
+    .hero-image-container {
+        width: 200px;
+        height: 200px;
     }
-    
+    .section-heading {
+        font-size: 2rem;
+    }
     .about-text {
         font-size: 1rem;
     }
-    
-    .skill-text {
+    .skill-item {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+    }
+    .project-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-name {
+        font-size: 2rem;
+    }
+    .hero-title {
         font-size: 1rem;
     }
-    
-    .project-title {
-        font-size: 1.25rem;
+    .social-icon-img {
+        width: 1.75rem;
+        height: 1.75rem;
     }
-    
-    .contact-links-grid {
-        grid-template-columns: 1fr;
+    .section-heading {
+        font-size: 1.8rem;
+    }
+    .skills-grid, .projects-grid {
         gap: 1rem;
     }
-}
-
-/* Smooth scrolling for the entire page */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Focus styles for accessibility */
-button:focus,
-.nav-button:focus,
-.contact-button:focus {
-    outline: 2px solid #60a5fa;
-    outline-offset: 2px;
-}
-
-/* Loading and transition effects */
-.hero-image,
-.project-image {
-    transition: opacity 0.3s ease-in-out;
-}
-
-.hero-image:hover,
-.project-image:hover {
-    opacity: 0.9;
 }

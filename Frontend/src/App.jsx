@@ -81,10 +81,6 @@ const App = () => {
         <div className="app-container">
             <header className="main-header">
                 <nav className="navbar">
-                    <div className="navbar-brand">
-                        <img src="/assets/logo.svg" alt="Logo" className="navbar-logo" />
-                        Hugo Eklund
-                    </div>
                     <ul className="nav-links">
                         <li>
                             <button
@@ -115,7 +111,7 @@ const App = () => {
                                 <img
                                     src={language === 'en' ? '/assets/flagSE.png' : '/assets/flagEN.png'}
                                     alt={language === 'en' ? 'Swedish Flag' : 'English Flag'}
-                                    className="language-flag"
+                                    className="social-icon-img"
                                 />
                             </button>
                         </li>
