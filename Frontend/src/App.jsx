@@ -7,14 +7,12 @@ const App = () => {
     const aboutRef = useRef(null);
     const skillsRef = useRef(null);
     const projectsRef = useRef(null);
-    const contactRef = useRef(null);
 
     const content = {
         en: {
             navAbout: 'About Me',
             navSkills: 'Skills',
             navProjects: 'Projects',
-            navContact: 'Contact Me',
             heroGreeting: 'Hi, I am',
             heroName: 'Hugo Eklund',
             heroTitle: 'Software Developer & Computer Science Engineer',
@@ -32,8 +30,6 @@ const App = () => {
             project2Desc: 'Cross-platform mobile application developed with modern frameworks, focusing on user experience and performance.',
             project3Title: 'Data Analysis Tool',
             project3Desc: 'Python-based data analysis tool with machine learning capabilities for processing large datasets.',
-            contactHeading: 'Get in Touch',
-            contactText: 'I am always open to new opportunities and collaborations. Feel free to reach out!',
             contactEmail: 'eklund.hugo@gmail.com',
             contactLinkedIn: 'linkedin.com/in/hugo-eklund-6003a2257',
             contactGithub: 'github.com/HugoEklund',
@@ -44,7 +40,6 @@ const App = () => {
             navAbout: 'Om Mig',
             navSkills: 'Färdigheter',
             navProjects: 'Projekt',
-            navContact: 'Kontakta Mig',
             heroGreeting: 'Hej, jag är',
             heroName: 'Hugo Eklund',
             heroTitle: 'Mjukvaruutvecklare | Ingenjör inom Datateknik',
@@ -62,8 +57,6 @@ const App = () => {
             project2Desc: 'Plattformsoberoende mobilapplikation utvecklad med moderna ramverk, fokus på användarupplevelse och prestanda.',
             project3Title: 'Dataanalysverktyg',
             project3Desc: 'Python-baserat dataanalysverktyg med maskininlärningskapacitet för bearbetning av stora datamängder.',
-            contactHeading: 'Kontakta Mig',
-            contactText: 'Jag är alltid öppen för nya möjligheter och samarbeten. Hör gärna av dig!',
             contactEmail: 'eklund.hugo@gmail.com',
             contactLinkedIn: 'linkedin.com/in/hugo-eklund-6003a2257',
             contactGithub: 'github.com/HugoEklund',
@@ -115,14 +108,6 @@ const App = () => {
                                 className="nav-button"
                             >
                                 {currentLang.navProjects}
-                            </button>
-                        </li>
-                        <li>
-                            <button
-                                onClick={() => scrollToSection(contactRef)}
-                                className="nav-button nav-button-primary"
-                            >
-                                {currentLang.navContact}
                             </button>
                         </li>
                         <li>
@@ -244,42 +229,6 @@ const App = () => {
                                 View Project &rarr;
                             </a>
                         </div>
-                    </div>
-                </div>
-            </section>
-
-            <section ref={contactRef} className="contact-section">
-                <div className="section-container text-center">
-                    <h2 className="section-heading section-heading-dark-blue">
-                        {currentLang.contactHeading}
-                    </h2>
-                    <p className="contact-text">{currentLang.contactText}</p>
-                    <div className="contact-links-grid">
-                        <a
-                            href={`mailto:${currentLang.contactEmail}`}
-                            className="contact-button contact-button-blue"
-                        >
-                            <img src="/assets/email.png" alt="Email" className="contact-icon-img" />
-                            Email Me
-                        </a>
-                        <a
-                            href={`https://${currentLang.contactLinkedIn}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="contact-button contact-button-dark"
-                        >
-                            <img src="/assets/linkedin.png" alt="LinkedIn" className="contact-icon-img" />
-                            LinkedIn
-                        </a>
-                        <a
-                            href={`https://${currentLang.contactGithub}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="contact-button contact-button-dark"
-                        >
-                            <img src="/assets/github.png" alt="GitHub" className="contact-icon-img" />
-                            GitHub
-                        </a>
                     </div>
                 </div>
             </section>
