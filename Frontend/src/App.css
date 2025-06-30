@@ -168,7 +168,6 @@
     bottom: 0;
     height: auto;
     left: 75%;
-    transform: translateX(-50%);
 }
 .hero-content-wrapper {
     position: relative;
@@ -185,7 +184,7 @@
 }
 .hero-image {
     width: 100%;
-    max-width: 500px;
+    max-width: 800px;
     height: auto;
     object-fit: cover;
     display: block;
