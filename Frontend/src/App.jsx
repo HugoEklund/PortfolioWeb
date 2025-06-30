@@ -31,7 +31,7 @@ const App = () => {
         setActiveProject(null);
         setTimeout(() => {
             if (projectsRef.current) {
-                projectsRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                projectsRef.current.scrollIntoView({ behavior: 'auto', block: 'center' });
             }
         }, 0);
     };
