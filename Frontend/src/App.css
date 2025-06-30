@@ -107,8 +107,6 @@
 .language-toggle-button:focus,
 .language-toggle-button:focus-visible,
 .language-toggle-button:hover {
-    outline: 3px solid var(--accent-main);
-    outline-offset: 2px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 190, 177, 0.6);
     background-color: rgba(255, 255, 255, 0.08);
 }
@@ -390,11 +388,9 @@
 .dropdown-item:hover,
 .dropdown-item:focus,
 .dropdown-item:focus-visible {
-    background: var(--accent-dark);
     color: white;
-    outline: 3px solid var(--accent-main);
-    outline-offset: 2px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.4), 0 0 20px rgba(0,190,177,0.6);
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 0.5rem;
     z-index: 2;
 }
