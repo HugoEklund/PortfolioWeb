@@ -110,11 +110,11 @@ const App = () => {
                                     </div>
                                 </div>
                                 <div className="hero-image-wrapper">
-                                    <img
-                                            src="/assets/selfie.png"
-                                            alt="Hugo Eklund"
-                                            className="hero-image"
-                                            onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/400x400/9CA3AF/FFFFFF?text=Photo"; } } />
+                                        <img
+                                                src="/assets/selfie.png"
+                                                alt="Hugo Eklund"
+                                                className="hero-image"
+                                        />
                                     </div>
                             </div>
                         </section>
@@ -124,7 +124,7 @@ const App = () => {
                                     About Me
                                 </h2>
                                 <p className="about-text">
-                                    I am a passionate software developer and computer science engineer with experience in modern web technologies and programming languages. I enjoy creating efficient, scalable solutions and am always eager to learn new technologies and take on challenging projects.
+                                    Jag har inte duschat på 2 veckor
                                 </p>
                             </div>
                         </section>
@@ -154,9 +154,9 @@ const App = () => {
                                             src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Web+App"
                                             alt="Web Application"
                                             className="project-image"
-                                            onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/9CA3AF/FFFFFF?text=Project"; } } />
-                                        <h3 className="project-title">Web Application</h3>
-                                        <p className="project-description">A full-stack web application built with React and Node.js featuring user authentication and real-time data processing.</p>
+                                        />
+                                        <h3 className="project-title">Thesis work</h3>
+                                        <p className="project-description">Yeah</p>
                                         <button className="project-link" onClick={() => openProjectPage('project1')}>
                                             View Project &rarr;
                                         </button>
@@ -166,9 +166,9 @@ const App = () => {
                                             src="https://placehold.co/600x400/10B981/FFFFFF?text=Mobile+App"
                                             alt="Mobile Application"
                                             className="project-image"
-                                            onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/9CA3AF/FFFFFF?text=Project"; } } />
-                                        <h3 className="project-title">Mobile App</h3>
-                                        <p className="project-description">Cross-platform mobile application developed with modern frameworks, focusing on user experience and performance.</p>
+                                        />
+                                        <h3 className="project-title">Website</h3>
+                                        <p className="project-description">This website lol</p>
                                         <button className="project-link" onClick={() => openProjectPage('project2')}>
                                             View Project &rarr;
                                         </button>
@@ -178,9 +178,9 @@ const App = () => {
                                             src="https://placehold.co/600x400/8B5CF6/FFFFFF?text=Data+Tool"
                                             alt="Data Analysis Tool"
                                             className="project-image"
-                                            onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/9CA3AF/FFFFFF?text=Project"; } } />
-                                        <h3 className="project-title">Data Analysis Tool</h3>
-                                        <p className="project-description">Python-based data analysis tool with machine learning capabilities for processing large datasets.</p>
+                                        />
+                                        <h3 className="project-title">temp</h3>
+                                        <p className="project-description">temp</p>
                                         <button className="project-link" onClick={() => openProjectPage('project3')}>
                                             View Project &rarr;
                                         </button>
@@ -208,6 +208,7 @@ const App = () => {
                                     onMouseOut={e => e.currentTarget.style.color = 'var(--accent-main)'}
                                 >
                                     ▲
+                                To the top
                                 </button>
                                 <p>&copy; {new Date().getFullYear()} Hugo Eklund All rights reserved.</p>
                                 <p className="footer-text-secondary">Built with React and CSS. Hosted on my NAS</p>
