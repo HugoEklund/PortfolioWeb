@@ -1,6 +1,6 @@
 .section-container {
     max-width: 72rem;
-    margin: 0 auto;
+    margin: auto;
     padding: 2rem 1rem;
 }
 
@@ -52,7 +52,7 @@
     justify-content: space-between;
     align-items: center;
     max-width: 72rem;
-    margin: 0 auto;
+    margin: auto;
     padding: 0 1rem;
 }
 
@@ -162,12 +162,10 @@
     justify-content: flex-end;
     z-index: 2;
     background: none;
-    padding: 0 0 0 2rem;
+    padding-left: 2rem;
     position: absolute;
-    right: 0;
-    bottom: 0;
-    height: auto;
     left: 85%;
+    width: 600px;
 }
 .hero-content-wrapper {
     position: relative;
@@ -180,11 +178,9 @@
     z-index: 1;
     min-height: 480px;
     padding: 2.5rem 1.5rem 2.5rem 1.5rem;
-    gap: 0;
 }
 .hero-image {
     width: 100%;
-    max-width: 800px;
     height: auto;
     object-fit: cover;
     display: block;
@@ -216,18 +212,18 @@
     font-size: 1.15rem;
     line-height: 1.8;
     max-width: 48rem;
-    margin: 0 auto;
+    margin: auto;
     color: #fff;
 }
 
 .skills-section {
     background: #fff;
-    padding: 6rem 0;
+    padding: 4rem 0;
 }
 
 .skills-grid {
     max-width: 32rem;
-    margin: 0 auto;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -258,8 +254,8 @@
 
 .projects-section {
     background-color: var(--medium-grey-bg);
-    padding: 6rem 0;
-    border: 2px solid var(--accent-main);
+    padding: 4rem 0;
+    border: 2px solid var(--border-color);
 }
 
 .projects-grid {
