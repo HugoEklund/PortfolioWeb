@@ -21,8 +21,10 @@ const App = () => {
             ref.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     };
+    const [lastScroll, setLastScroll] = useState(null);
 
     const openProjectPage = (projectId) => {
+        setLastScroll(window.scrollY);
         setActiveProject(projectId);
         setShowDropdown(false);
     };
@@ -30,8 +32,8 @@ const App = () => {
     const closeProjectPage = () => {
         setActiveProject(null);
         setTimeout(() => {
-            if (projectsRef.current) {
-                projectsRef.current.scrollIntoView({ behavior: 'auto', block: 'center' });
+            if (lastScroll !== null) {
+                window.scrollTo({ top: lastScroll, behavior: 'auto' });
             }
         }, 0);
     };
