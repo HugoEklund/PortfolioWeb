@@ -22,25 +22,26 @@ const App = () => {
         }
     };
 
-
+    const [lastScroll, setLastScroll] = useState(null);
+    
     const openProjectPage = (projectId) => {
+        setLastScroll(window.scrollY);
         setActiveProject(projectId);
         setShowDropdown(false);
     };
 
-
     const closeProjectPage = () => {
-        setActiveProject(null);
-        setTimeout(() => {
-            if (projectsRef.current) {
-                const html = document.documentElement;
-                const prevScrollBehavior = html.style.scrollBehavior;
-                html.style.scrollBehavior = 'auto';
-                projectsRef.current.scrollIntoView({ behavior: 'auto', block: 'center' });
-                html.style.scrollBehavior = prevScrollBehavior || '';
-            }
-        }, 0);
-    };
+    setActiveProject(null);
+    setTimeout(() => {
+        if (lastScroll !== null) {
+            const html = document.documentElement;
+            const prevScrollBehavior = html.style.scrollBehavior;
+            html.style.scrollBehavior = 'auto';
+            window.scrollTo({ top: lastScroll });
+            html.style.scrollBehavior = prevScrollBehavior || '';
+        }
+    }, 0);
+};
 
     return (
         <>
