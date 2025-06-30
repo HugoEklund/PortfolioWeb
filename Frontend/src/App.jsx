@@ -33,7 +33,6 @@ const App = () => {
 
     return (
         <>
-            <div className="vignette-bg" aria-hidden="true" />
             <div className="app-container">
                 {activeProject ? (
                     <ProjectPage projectId={activeProject} onBack={closeProjectPage} />
@@ -79,9 +78,9 @@ const App = () => {
                                                 left: 0,
                                                 zIndex: 1001
                                             }}>
-                                                <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', color: 'var(--secondary-text)', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project1')}>Web Application</button></li>
-                                                <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', color: 'var(--secondary-text)', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project2')}>Mobile App</button></li>
-                                                <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', color: 'var(--secondary-text)', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project3')}>Data Analysis Tool</button></li>
+                                                <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project1')}>Web Application</button></li>
+                                                <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project2')}>Mobile App</button></li>
+                                                <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project3')}>Data Analysis Tool</button></li>
                                             </ul>
                                         )}
                                     </li>
@@ -89,7 +88,7 @@ const App = () => {
                             </nav>
                         </header>
                         <section className="hero-section" style={{ position: 'relative' }}>
-                            <div className="vignette-bg" aria-hidden="true" style={{ zIndex: 0, pointerEvents: 'none' }} />
+                            <div className="vignette-block" aria-hidden="true" />
                             <div className="hero-content-wrapper">
                                 <div className="hero-text-content">
                                     <h1 className="hero-name">
@@ -131,9 +130,10 @@ const App = () => {
                                 </p>
                             </div>
                         </section>
-                        <section ref={skillsRef} className="skills-section">
+                        <section ref={skillsRef} className="skills-section" style={{ position: 'relative' }}>
+                            <div className="vignette-block" aria-hidden="true" />
                             <div className="section-container text-center">
-                                <h2 className="section-heading section-heading-blue">
+                                <h2 className="section-heading section-heading-blue" style={{ color: '#111827' }}>
                                     My Skills
                                 </h2>
                                 <div className="skills-grid">

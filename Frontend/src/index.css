@@ -1,62 +1,37 @@
-/* index.css */
-
-/* Global Styles & Variables */
 :root {
-    /* Färgpalett från ditt tidigare godkända svar, dessa är centrala */
     --dark-grey-bg: #111827;
     --medium-grey-bg: #1f2937;
-    --white-text: #ffffff;
     --secondary-text: #9ca3af;
     --tertiary-text: #6b7280;
-    --accent-main: #00C9B1; /* Den tydliga turkosa färgen */
-    --accent-dark: #00A690; /* Mörkare variant för hover */
+    --accent-main: #00C9B1;
+    --accent-dark: #00A690;
     --border-color: #374151;
-
-    /* Grundläggande font-inställningar från din befintliga index.css */
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
-
-    /* Färgteman, nu anpassade till din mörka palett som standard */
-    color-scheme: dark; /* Standard till mörkt tema */
-    color: var(--light-grey-text); /* Standard textfärg */
-    background-color: var(--dark-grey-bg); /* Standard bakgrundsfärg */
-
+    color-scheme: dark;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
-    /* Förbättrad smooth scrolling */
     scroll-behavior: smooth;
 }
-
-/* Global box-sizing för enklare layout */
 *, *::before, *::after {
     box-sizing: border-box;
 }
-
 body {
     margin: 0;
-    /* Ta bort display: flex, place-items: center, min-width, min-height
-       Dessa är mer layoutspecifika för App-komponenten eller en enkel sida
-       och kan störa din React-applikations layout.
-       Färger hanteras av :root och bör överföras till App.css om specifika sektioner kräver dem. */
-    min-width: 320px; /* Behåller detta som en minsta bredd för mobilvänlighet */
+    min-width: 320px;
 }
-
-/* Länkstilar */
 a {
     font-weight: 500;
-    color: var(--accent-main); /* Använd accentfärg för länkar */
-    text-decoration: none; /* Inget understreck som standard */
-    transition: color 0.25s; /* Mjuk övergång för hover */
+    color: var(--accent-main);
+    text-decoration: none;
+    transition: color 0.25s;
 }
 a:hover {
-    color: var(--accent-dark); /* Mörkare accentfärg vid hover */
+    color: var(--accent-dark);
 }
-
-/* Globala knappstilar (om de inte överlappas av mer specifika stilar i App.css) */
 button {
     border-radius: 8px;
     border: 1px solid transparent;
@@ -64,48 +39,21 @@ button {
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: var(--medium-grey-bg); /* Standardknappfärg */
-    color: var(--light-grey-text); /* Knapptextfärg */
+    background-color: var(--medium-grey-bg);
+    color: var(--light-grey-text);
     cursor: pointer;
     transition: border-color 0.25s, background-color 0.25s, color 0.25s;
 }
 button:hover {
-    border-color: var(--accent-main); /* Accentfärg på kant vid hover */
-    background-color: var(--accent-dark); /* Mörkare accentfärg på bakgrund vid hover */
-    color: white; /* Vit text vid hover för bättre kontrast */
+    border-color: var(--accent-main);
+    background-color: var(--accent-dark);
+    color: white;
 }
-
-/* Fokusstilar för tillgänglighet - nu mer generella */
-/* Dessa kommer att komplettera de mer specifika fokusstilarna i App.css */
 button:focus,
 button:focus-visible,
 a:focus,
 a:focus-visible {
-    outline: 3px solid var(--accent-main); /* Tydligare fokusram */
+    outline: 3px solid var(--accent-main);
     outline-offset: 3px;
-    border-radius: 0.5rem; /* Matchar runda hörn, anpassa om button har annan */
-}
-
-/* Media Query för Ljust Tema (om du vill behålla den funktionaliteten) */
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547; /* Mörkare textfärg för ljust tema */
-        background-color: #ffffff; /* Vit bakgrund för ljust tema */
-    }
-    /* Anpassa länk- och knappfärger för ljust tema om nödvändigt */
-    a {
-        color: #646cff; /* Original länkfärg */
-    }
-    a:hover {
-        color: #747bff; /* Original länk-hover färg */
-    }
-    button {
-        background-color: #f9f9f9;
-        color: #213547;
-    }
-    button:hover {
-        border-color: #646cff;
-        background-color: #e0e0e0;
-        color: #213547;
-    }
+    border-radius: 0.5rem;
 }
