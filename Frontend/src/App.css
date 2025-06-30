@@ -116,18 +116,38 @@
     width: 2.6rem;
     height: 2.6rem;
     border-radius: 50%;
-    object-fit: cover;
-    object-position: center;
-    filter: none;
-    display: block;
     position: relative;
+    display: block;
     background: none;
-    /* Cross-section effect using two backgrounds */
-    background: linear-gradient(135deg, transparent 49.5%, #fff 49.5%, #fff 50.5%, transparent 50.5%),
-        url('/assets/flagEN.png') top left/50% 50% no-repeat,
-        url('/assets/flagSE.png') bottom right/50% 50% no-repeat;
-    background-blend-mode: normal;
-    background-color: transparent;
+    /* Remove previous background-image */
+    overflow: hidden;
+}
+.language-flag::before,
+.language-flag::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background-size: 200% 200%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.language-flag::before {
+    /* Top left half: English flag */
+    background-image: url('/assets/flagEN.png');
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    background-position: left top;
+    background-size: 200% 200%;
+}
+.language-flag::after {
+    /* Bottom right half: Swedish flag */
+    background-image: url('/assets/flagSE.png');
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    background-position: right bottom;
+    background-size: 200% 200%;
 }
 
 .hero-section {
