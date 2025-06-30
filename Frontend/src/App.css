@@ -116,7 +116,9 @@
     align-items: flex-end;
     justify-content: space-between;
     width: 100%;
+    max-width: 72rem;
     z-index: 1;
+    min-height: 800px;
     padding: 2.5rem 1.5rem 2.5rem 1.5rem;
     gap: 0;
 }
