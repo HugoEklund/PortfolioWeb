@@ -29,6 +29,11 @@ const App = () => {
 
     const closeProjectPage = () => {
         setActiveProject(null);
+        setTimeout(() => {
+            if (projectsRef.current) {
+                projectsRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }, 0);
     };
 
     return (
