@@ -104,24 +104,28 @@
     border: none;
     cursor: pointer;
     padding: 0.5rem;
-    border-radius: 0.5rem;
-    transition: background-color 0.3s ease;
+    border-radius: 50%; /* Make the button circular */
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
 }
 
-.language-flag:hover {
-    transform: scale(1.05); /* Slight scale on hover */
-    border-color: var(--accent-main); /* Accent border on hover */
+.language-toggle-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
 }
 
 .language-flag {
     width: 1.75rem;
     height: 1.75rem;
-    border-radius: 50%; /* Makes it circular */
-    object-fit: cover; /* Ensures uniform scaling and cropping */
-    object-position: center; /* Centers the image within the circle */
-    border: 2px solid var(--border-color); /* Optional: adds a subtle border */
-    transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
-    filter: none; /* Explicitly remove any inherited filters */
+    border-radius: 50%; /* Make the flag image circular */
+    object-fit: cover; /* Crop to fill the circle */
+    object-position: center; /* Center the image */
+    filter: none; /* Remove any inherited filters */
+    border: 2px solid transparent; /* Invisible border for hover effect */
+    transition: border-color 0.2s ease-in-out;
+}
+
+.language-flag:hover {
+    border-color: var(--accent-main);
 }
 
 /* --- Hero Section --- */
@@ -192,20 +196,23 @@
 
 .social-icon {
     display: inline-block;
-    transition: transform 0.2s ease-in-out;
+    border-radius: 50%; /* Make the clickable area circular */
+    padding: 0.5rem; /* Space around the icon for glow effect */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .social-icon:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 190, 177, 0.3); /* Lägg till "glöd" */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 190, 177, 0.6);
+    transform: scale(1.05);
 }
 
 .social-icon-img {
     width: 2rem;
     height: 2rem;
     object-fit: contain;
-    filter: none; /* Explicitly remove any inherited filters */
+    filter: none; /* Remove any inherited white filters */
+    border-radius: 50%; /* Make the image itself circular too */
 }
-
 .hero-image-container {
     width: 250px; /* Specific width */
     height: 250px; /* Specific height */

@@ -111,7 +111,7 @@ const App = () => {
                                 <img
                                     src={language === 'en' ? '/assets/flagSE.png' : '/assets/flagEN.png'}
                                     alt={language === 'en' ? 'Swedish Flag' : 'English Flag'}
-                                    className="social-icon-img"
+                                    className="language-flag"
                                 />
                             </button>
                         </li>
@@ -231,7 +231,7 @@ const App = () => {
             <footer className="main-footer">
                 <div className="section-container">
                     <p>&copy; {new Date().getFullYear()} Hugo Eklund. All rights reserved.</p>
-                    <p className="footer-text-secondary">Built with React and CSS.</p>
+                    <p className="footer-text-secondary">Built with React and CSS. Hosted on Hugos NAS</p>
                 </div>
             </footer>
         </div>
