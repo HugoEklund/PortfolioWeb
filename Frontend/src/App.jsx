@@ -122,7 +122,6 @@ const App = () => {
             <section className="hero-section">
                 <div className="hero-content-wrapper">
                     <div className="hero-text-content">
-                        <p className="hero-greeting">{currentLang.heroGreeting}</p>
                         <h1 className="hero-name">
                             {currentLang.heroName}
                         </h1>

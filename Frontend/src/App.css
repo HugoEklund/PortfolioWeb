@@ -108,14 +108,20 @@
     transition: background-color 0.3s ease;
 }
 
-.language-toggle-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+.language-flag:hover {
+    transform: scale(1.05); /* Slight scale on hover */
+    border-color: var(--accent-main); /* Accent border on hover */
 }
 
 .language-flag {
     width: 1.75rem;
     height: 1.75rem;
-    object-fit: contain;
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensures uniform scaling and cropping */
+    object-position: center; /* Centers the image within the circle */
+    border: 2px solid var(--border-color); /* Optional: adds a subtle border */
+    transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    filter: none; /* Explicitly remove any inherited filters */
 }
 
 /* --- Hero Section --- */
@@ -157,13 +163,6 @@
     }
 }
 
-.hero-greeting {
-    font-size: 1.75rem; /* Slightly larger */
-    font-weight: 500;
-    color: var(--secondary-text);
-    margin-bottom: 0.75rem;
-}
-
 .hero-name {
     font-size: 3.5rem; /* Bigger name */
     font-weight: 800; /* Bolder */
@@ -197,14 +196,14 @@
 }
 
 .social-icon:hover {
-    transform: translateY(-5px); /* Lyfter ikonen vid hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 190, 177, 0.3); /* Lägg till "glöd" */
 }
 
 .social-icon-img {
-    width: 2rem; /* Ännu större för tydlighet */
+    width: 2rem;
     height: 2rem;
     object-fit: contain;
-    filter: brightness(0) invert(1); /* Ensure icons are light/white */
+    filter: none; /* Explicitly remove any inherited filters */
 }
 
 .hero-image-container {
@@ -222,11 +221,6 @@
     object-fit: cover;
     display: block;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.hero-image:hover {
-    transform: scale(1.05); /* Zoomar in lite vid hover */
-    opacity: 0.95;
 }
 
 /* --- About Me Section --- */
@@ -273,7 +267,7 @@
 }
 
 .skill-item:hover {
-    transform: translateY(-5px) scale(1.02); /* Lyfter och förstorar vid hover */
+    transform: translateY(-2px) scale(1.02); /* Lyfter och förstorar vid hover */
     background-color: var(--accent-dark); /* Accentfärg vid hover */
     border-color: var(--accent-main);
 }
@@ -308,7 +302,7 @@
 }
 
 .project-card:hover {
-    transform: translateY(-10px) scale(1.02); /* Lyfter och förstorar kortet */
+    transform: translateY(-5px) scale(1.02); /* Lyfter och förstorar kortet */
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 190, 177, 0.3); /* Lägg till "glöd" */
 }
 
