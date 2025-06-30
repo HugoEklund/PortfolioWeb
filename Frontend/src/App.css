@@ -416,16 +416,25 @@
 .to-top-arrow {
     background: none;
     border: none;
-    color: #fff;
+    color: #fff !important;
     cursor: pointer;
     font-size: 2.2rem;
     transition: color 0.2s;
     padding: 0;
     margin: 0 auto 0 auto;
     display: block;
+    transform: rotate(180deg);
 }
 .to-top-arrow:hover {
-    color: #10B981;
+    color: var(--accent-main) !important;
+}
+.to-top-arrow svg {
+    display: block;
+    margin: 0 auto;
+    width: 2.2rem;
+    height: 2.2rem;
+    fill: currentColor;
+    transition: fill 0.2s;
 }
 
 .footer-text-secondary {
