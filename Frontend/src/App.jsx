@@ -186,7 +186,7 @@ const App = () => {
                                     className="to-top-arrow"
                                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                                 >
-                                    <img src="/assets/arrow.svg" alt="arrow" style={{ transform: 'rotate(180deg)'}}/>
+                                    <img src="/assets/arrow.svg" alt="arrow" style={{ transform: 'rotate(180deg)', width: '50px', height: '50px'}}/>
                                     <span style={{ display: 'block', fontSize: '1.1rem', color: '#fff', marginTop: '0.1em', letterSpacing: '0.02em' }}>To the top</span>
                                 </button>
                                 <p>&copy; {new Date().getFullYear()} Hugo Eklund. All rights reserved.</p>
