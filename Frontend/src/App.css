@@ -163,10 +163,27 @@
     z-index: 2;
     background: none;
     padding: 0 0 0 2rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: auto;
+}
+.hero-content-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 72rem;
+    z-index: 1;
+    min-height: 480px;
+    padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+    gap: 0;
 }
 .hero-image {
     width: 100%;
-    max-width: 320px;
+    max-width: 500px;
     height: auto;
     object-fit: cover;
     display: block;
@@ -191,6 +208,7 @@
 
 .about-section {
     background-color: var(--medium-grey-bg);
+    border: 2px solid var(--dark-grey-bg);
 }
 
 .about-text {
@@ -240,6 +258,7 @@
 .projects-section {
     background-color: var(--medium-grey-bg);
     padding: 6rem 0;
+    border: 2px solid var(--accent-main);
 }
 
 .projects-grid {
@@ -391,7 +410,7 @@
 .main-footer {
     background-color: var(--dark-grey-bg);
     color: white;
-    padding: 2.5rem 1rem;
+    padding: 1rem;
     text-align: center;
     border-top: 1px solid var(--border-color);
 }
