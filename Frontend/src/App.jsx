@@ -189,7 +189,7 @@ const App = () => {
                                     <img src="/assets/arrow.svg" alt="arrow" style={{ transform: 'rotate(180deg)', width: '50px', height: '50px', display: 'block', margin: '0 auto' }}/>
                                 </button>
                                 <span style={{ display: 'block', fontSize: '1.1rem', color: '#fff', marginTop: '0.1em', letterSpacing: '0.02em' }}>To the top</span>
-                                <p>&copy; {new Date().getFullYear()} Hugo Eklund. All rights reserved.</p>
+                                <p style={{ marginTop: '2rem' }}>&copy; {new Date().getFullYear()} Hugo Eklund. All rights reserved.</p>
                                 <p className="footer-text-secondary">Built with React and CSS. Hosted on my NAS</p>
                             </div>
                         </footer>
