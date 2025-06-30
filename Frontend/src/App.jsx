@@ -182,14 +182,11 @@ const App = () => {
                         <footer className="main-footer">
                             <div className="section-container">
                                 <button
-                                    className="to-top-btn"
                                     aria-label="Scroll to top"
+                                    className="to-top-arrow"
                                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                                    onMouseOver={e => e.currentTarget.style.color = '#fff'}
-                                    onMouseOut={e => e.currentTarget.style.color = 'var(--accent-main)'}
                                 >
                                     <span style={{ display: 'block', fontSize: '2.2rem', lineHeight: 1 }}>▲</span>
-                                    <span style={{ display: 'block', fontSize: '1.1rem', color: '#fff', marginTop: '0.1em', letterSpacing: '0.02em' }}>To the top</span>
                                 </button>
                                 <p>&copy; {new Date().getFullYear()} Hugo Eklund. All rights reserved.</p>
                                 <p className="footer-text-secondary">Built with React and CSS. Hosted on my NAS</p>
