@@ -10,7 +10,7 @@ const App = () => {
     const [activeProject, setActiveProject] = useState(null);
     const heroName = 'Hugo Eklund';
     const skillsList = [
-        'C#', 'Winforms', 'Java', 'React.js', 'Python', 'SQL', 'Cloud Platforms (AWS)', 'Git', 'Agile Methodologies (Scrum & Kanban)'
+        'C# & .NET', 'REST APIs', , 'Winforms', 'Java', 'React.js', 'Python', 'SQL', 'Git', 'Agile Methodologies (Scrum & Kanban)'
     ];
     const contactEmail = 'eklund.hugo@gmail.com';
     const contactLinkedIn = 'linkedin.com/in/hugo-eklund-6003a2257';
