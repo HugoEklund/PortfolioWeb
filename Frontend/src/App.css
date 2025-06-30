@@ -81,8 +81,6 @@
     font-size: 1.1rem;
     cursor: pointer;
     padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    transition: all 0.3s ease;
 }
 
 .nav-button:hover {
@@ -92,19 +90,27 @@
 }
 
 .language-toggle-button {
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 0.25rem;
     border-radius: 50%;
-    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+    position: relative;
+    transition: background-color 0.3s, box-shadow 0.2s;
 }
 
+.language-toggle-button:focus,
+.language-toggle-button:focus-visible,
 .language-toggle-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    outline: 3px solid var(--accent-main);
+    outline-offset: 2px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 190, 177, 0.6);
+    background-color: rgba(255, 255, 255, 0.08);
 }
 
 .language-flag {
@@ -114,6 +120,7 @@
     object-fit: cover;
     object-position: center;
     filter: none;
+    display: block;
 }
 
 .hero-section {
@@ -184,8 +191,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
     border-radius: 50%;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
@@ -196,20 +203,20 @@
 }
 
 .social-icon-img {
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
     object-fit: contain;
     filter: none;
     border-radius: 50%;
 }
 
 .hero-image-container {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     overflow: hidden;
     border: 4px solid var(--accent-main);
-    box-shadow: 0 0 20px rgba(0, 190, 177, 0.5);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 190, 177, 0.6);
 }
 
 .hero-image {
@@ -292,7 +299,7 @@
 }
 
 .project-card:hover {
-    transform: translateY(-5px) scale(1.02);
+    transform: translateY(-2px) scale(1.01);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 190, 177, 0.3);
 }
 
@@ -351,7 +358,7 @@
 }
 
 .projects-dropdown:hover .arrow-down {
-    transform: rotate(180deg);
+    transform: rotate(90deg);
 }
 
 .dropdown-menu {
@@ -379,9 +386,17 @@
     font-size: 1rem;
     transition: background 0.2s, color 0.2s;
 }
-.dropdown-item:hover {
+
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item:focus-visible {
     background: var(--accent-dark);
     color: white;
+    outline: 3px solid var(--accent-main);
+    outline-offset: 2px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4), 0 0 20px rgba(0,190,177,0.6);
+    border-radius: 0.5rem;
+    z-index: 2;
 }
 
 .main-footer {

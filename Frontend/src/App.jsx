@@ -117,7 +117,7 @@ const App = () => {
                                     style={{ display: 'flex', alignItems: 'center', gap: '0.3em' }}
                                 >
                                     {currentLang.navProjects}
-                                    <span className="arrow-down" style={{ fontSize: '0.8em', marginLeft: '0.2em' }}>▼</span>
+                                    <span className="arrow-down" style={{ fontSize: '0.8em', marginLeft: '0.2em' }}>▶</span>
                                 </button>
                                 {showDropdown && (
                                     <ul className="dropdown-menu" style={{
