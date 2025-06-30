@@ -21,8 +21,9 @@ const App = () => {
             ref.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     };
-    const [lastScroll, setLastScroll] = useState(null);
 
+    const [lastScroll, setLastScroll] = useState(null);
+    
     const openProjectPage = (projectId) => {
         setLastScroll(window.scrollY);
         setActiveProject(projectId);
@@ -30,13 +31,17 @@ const App = () => {
     };
 
     const closeProjectPage = () => {
-        setActiveProject(null);
-        setTimeout(() => {
-            if (lastScroll !== null) {
-                window.scrollTo({ top: lastScroll, behavior: 'auto' });
-            }
-        }, 0);
-    };
+    setActiveProject(null);
+    setTimeout(() => {
+        if (lastScroll !== null) {
+            const html = document.documentElement;
+            const prevScrollBehavior = html.style.scrollBehavior;
+            html.style.scrollBehavior = 'auto';
+            window.scrollTo({ top: lastScroll });
+            html.style.scrollBehavior = prevScrollBehavior || '';
+        }
+    }, 0);
+};
 
     return (
         <>
