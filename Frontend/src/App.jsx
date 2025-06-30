@@ -1,10 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import './App.css';
 import ProjectPage from './ProjectPage';
 
 const App = () => {
-    const [language, setLanguage] = useState('en');
-
     const aboutRef = useRef(null);
     const skillsRef = useRef(null);
     const projectsRef = useRef(null);
@@ -12,52 +10,11 @@ const App = () => {
     const [activeProject, setActiveProject] = useState(null);
     const heroName = 'Hugo Eklund';
     const skillsList = [
-                'C#', 'Winforms', 'Java', 'React.js', 'Python', 'SQL', 'Cloud Platforms (AWS)', 'Git', 'Agile Methodologies (Scrum & Kanban)'
-            ];
+        'C#', 'Winforms', 'Java', 'React.js', 'Python', 'SQL', 'Cloud Platforms (AWS)', 'Git', 'Agile Methodologies (Scrum & Kanban)'
+    ];
     const contactEmail = 'eklund.hugo@gmail.com';
-    const contactLinkedIn =  'linkedin.com/in/hugo-eklund-6003a2257';
+    const contactLinkedIn = 'linkedin.com/in/hugo-eklund-6003a2257';
     const contactGithub = 'github.com/HugoEklund';
-
-    const content = {
-        en: {
-            navAbout: 'About Me',
-            navSkills: 'Skills',
-            navProjects: 'Projects',
-            heroGreeting: 'Hi, I am',
-            heroTitle: 'Software Developer & Computer Science Engineer',
-            aboutHeading: 'About Me',
-            aboutText: 'I am a passionate software developer and computer science engineer with experience in modern web technologies and programming languages. I enjoy creating efficient, scalable solutions and am always eager to learn new technologies and take on challenging projects.',
-            skillsHeading: 'My Skills',
-            projectsHeading: 'My Projects',
-            project1Title: 'Web Application',
-            project1Desc: 'A full-stack web application built with React and Node.js featuring user authentication and real-time data processing.',
-            project2Title: 'Mobile App',
-            project2Desc: 'Cross-platform mobile application developed with modern frameworks, focusing on user experience and performance.',
-            project3Title: 'Data Analysis Tool',
-            project3Desc: 'Python-based data analysis tool with machine learning capabilities for processing large datasets.',
-            buttonReadMore: 'Read More',
-            buttonExplore: 'Explore'
-        },
-        sv: {
-            navAbout: 'Om Mig',
-            navSkills: 'Färdigheter',
-            navProjects: 'Projekt',
-            heroGreeting: 'Hej, jag är',
-            heroTitle: 'Mjukvaruutvecklare | Ingenjör inom Datateknik',
-            aboutHeading: 'Om Mig',
-            aboutText: 'Jag är en passionerad mjukvaruutvecklare och dataingenjör med erfarenhet av moderna webbteknologier och programmeringsspråk. Jag tycker om att skapa effektiva, skalbara lösningar och är alltid sugen på att lära mig nya teknologier och ta på mig utmanande projekt.',
-            skillsHeading: 'Mina Färdigheter',
-            projectsHeading: 'Mina Projekt',
-            project1Title: 'Webbapplikation',
-            project1Desc: 'En fullstack-webbapplikation byggd med React och Node.js med användarautentisering och realtidsdatabehandling.',
-            project2Title: 'Mobilapp',
-            project2Desc: 'Plattformsoberoende mobilapplikation utvecklad med moderna ramverk, fokus på användarupplevelse och prestanda.',
-            project3Title: 'Dataanalysverktyg',
-            project3Desc: 'Python-baserat dataanalysverktyg med maskininlärningskapacitet för bearbetning av stora datamängder.',
-            buttonReadMore: 'Läs Mer',
-            buttonExplore: 'Utforska'
-        }
-    };
 
     const scrollToSection = (ref) => {
         if (ref.current) {
@@ -74,187 +31,175 @@ const App = () => {
         setActiveProject(null);
     };
 
-    const toggleLanguage = () => {
-        setLanguage(prevLang => (prevLang === 'en' ? 'sv' : 'en'));
-    };
-
-    const currentLang = content[language];
-
     return (
-        <><div className="vignette-bg" aria-hidden="true" /><div className="app-container">
-            {activeProject ? (
-                <ProjectPage projectId={activeProject} onBack={closeProjectPage} />
-            ) : (
-                <>
-                    <header className="main-header">
-                        <nav className="navbar">
-                            <ul className="nav-links">
-                                <li>
-                                    <button
-                                        onClick={() => scrollToSection(aboutRef)}
-                                        className="nav-button"
+        <>
+            <div className="vignette-bg" aria-hidden="true" />
+            <div className="app-container">
+                {activeProject ? (
+                    <ProjectPage projectId={activeProject} onBack={closeProjectPage} />
+                ) : (
+                    <>
+                        <header className="main-header">
+                            <nav className="navbar">
+                                <ul className="nav-links">
+                                    <li>
+                                        <button
+                                            onClick={() => scrollToSection(aboutRef)}
+                                            className="nav-button"
+                                        >
+                                            About Me
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button
+                                            onClick={() => scrollToSection(skillsRef)}
+                                            className="nav-button"
+                                        >
+                                            Skills
+                                        </button>
+                                    </li>
+                                    <li
+                                        className="projects-dropdown"
+                                        onMouseEnter={() => setShowDropdown(true)}
+                                        onMouseLeave={() => setShowDropdown(false)}
+                                        style={{ position: 'relative' }}
                                     >
-                                        {currentLang.navAbout}
-                                    </button>
-                                </li>
-                                <li>
-                                    <button
-                                        onClick={() => scrollToSection(skillsRef)}
-                                        className="nav-button"
-                                    >
-                                        {currentLang.navSkills}
-                                    </button>
-                                </li>
-                                <li
-                                    className="projects-dropdown"
-                                    onMouseEnter={() => setShowDropdown(true)}
-                                    onMouseLeave={() => setShowDropdown(false)}
-                                    style={{ position: 'relative' }}
-                                >
-                                    <button
-                                        onClick={() => scrollToSection(projectsRef)}
-                                        className="nav-button"
-                                        style={{ display: 'flex', alignItems: 'center', gap: '0.3em' }}
-                                    >
-                                        {currentLang.navProjects}
-                                        <span className="arrow-down" style={{ fontSize: '0.8em', marginLeft: '0.2em' }}>▶</span>
-                                    </button>
-                                    {showDropdown && (
-                                        <ul className="dropdown-menu" style={{
-                                            position: 'absolute',
-                                            top: '100%',
-                                            left: 0,
-                                            zIndex: 1001
-                                        }}>
-                                            <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', color: 'var(--secondary-text)', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project1')}>Web Application</button></li>
-                                            <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', color: 'var(--secondary-text)', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project2')}>Mobile App</button></li>
-                                            <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', color: 'var(--secondary-text)', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project3')}>Data Analysis Tool</button></li>
-                                        </ul>
-                                    )}
-                                </li>
-                                <li>
-                                    <button onClick={toggleLanguage} className="language-toggle-button">
-                                        <span className="language-flag" />
-                                    </button>
-                                </li>
-                            </ul>
-                        </nav>
-                    </header>
-
-                    <section className="hero-section">
-                        <div className="hero-content-wrapper">
-                            <div className="hero-text-content">
-                                <h1 className="hero-name">
-                                    {heroName}
-                                </h1>
-                                <p className="hero-title">
-                                    {currentLang.heroTitle}
-                                </p>
-                                <div className="social-icons">
-                                    <a href={`https://${contactGithub}`} className="social-icon" target="_blank" rel="noopener noreferrer">
-                                        <img src="/assets/github.png" alt="GitHub" className="social-icon-img" />
-                                    </a>
-                                    <a href={`https://${contactLinkedIn}`} className="social-icon" target="_blank" rel="noopener noreferrer">
-                                        <img src="/assets/linkedin.png" alt="LinkedIn" className="social-icon-img" />
-                                    </a>
-                                    <a href={`mailto:${contactEmail}`} className="social-icon">
-                                        <img src="/assets/email.png" alt="Email" className="social-icon-img" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="hero-image-wrapper">
-                                <div className="hero-image-container">
-                                    <img
-                                        src="/assets/selfie.png"
-                                        alt="Hugo Eklund"
-                                        className="hero-image"
-                                        onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/400x400/9CA3AF/FFFFFF?text=Photo"; } } />
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section ref={aboutRef} className="about-section">
-                        <div className="section-container text-center">
-                            <h2 className="section-heading section-heading-blue">
-                                {currentLang.aboutHeading}
-                            </h2>
-                            <p className="about-text">
-                                {currentLang.aboutText}
-                            </p>
-                        </div>
-                    </section>
-
-                    <section ref={skillsRef} className="skills-section">
-                        <div className="section-container text-center">
-                            <h2 className="section-heading section-heading-blue">
-                                {currentLang.skillsHeading}
-                            </h2>
-                            <div className="skills-grid">
-                                {skillsList.map((skill, index) => (
-                                    <div key={index} className="skill-item">
-                                        <span className="skill-text">{skill}</span>
+                                        <button
+                                            onClick={() => scrollToSection(projectsRef)}
+                                            className="nav-button"
+                                            style={{ display: 'flex', alignItems: 'center', gap: '0.3em' }}
+                                        >
+                                            Projects
+                                            <span className="arrow-down" style={{ fontSize: '0.8em', marginLeft: '0.2em' }}>▶</span>
+                                        </button>
+                                        {showDropdown && (
+                                            <ul className="dropdown-menu" style={{
+                                                position: 'absolute',
+                                                top: '100%',
+                                                left: 0,
+                                                zIndex: 1001
+                                            }}>
+                                                <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', color: 'var(--secondary-text)', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project1')}>Web Application</button></li>
+                                                <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', color: 'var(--secondary-text)', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project2')}>Mobile App</button></li>
+                                                <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', color: 'var(--secondary-text)', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project3')}>Data Analysis Tool</button></li>
+                                            </ul>
+                                        )}
+                                    </li>
+                                </ul>
+                            </nav>
+                        </header>
+                        <section className="hero-section" style={{ position: 'relative' }}>
+                            <div className="vignette-bg" aria-hidden="true" style={{ zIndex: 0, pointerEvents: 'none' }} />
+                            <div className="hero-content-wrapper">
+                                <div className="hero-text-content">
+                                    <h1 className="hero-name">
+                                        {heroName}
+                                    </h1>
+                                    <p className="hero-title">
+                                        Software Developer & Computer Science Engineer
+                                    </p>
+                                    <div className="social-icons">
+                                        <a href={`https://${contactGithub}`} className="social-icon" target="_blank" rel="noopener noreferrer">
+                                            <img src="/assets/github.png" alt="GitHub" className="social-icon-img" />
+                                        </a>
+                                        <a href={`https://${contactLinkedIn}`} className="social-icon" target="_blank" rel="noopener noreferrer">
+                                            <img src="/assets/linkedin.png" alt="LinkedIn" className="social-icon-img" />
+                                        </a>
+                                        <a href={`mailto:${contactEmail}`} className="social-icon">
+                                            <img src="/assets/email.png" alt="Email" className="social-icon-img" />
+                                        </a>
                                     </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-
-                    <section ref={projectsRef} className="projects-section">
-                        <div className="section-container text-center">
-                            <h2 className="section-heading section-heading-blue">
-                                {currentLang.projectsHeading}
-                            </h2>
-                            <div className="projects-grid">
-                                <div className="project-card">
-                                    <img
-                                        src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Web+App"
-                                        alt="Web Application"
-                                        className="project-image"
-                                        onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/9CA3AF/FFFFFF?text=Project"; } } />
-                                    <h3 className="project-title">{currentLang.project1Title}</h3>
-                                    <p className="project-description">{currentLang.project1Desc}</p>
-                                    <button className="project-link" onClick={() => openProjectPage('project1')}>
-                                        View Project &rarr;
-                                    </button>
                                 </div>
-                                <div className="project-card">
-                                    <img
-                                        src="https://placehold.co/600x400/10B981/FFFFFF?text=Mobile+App"
-                                        alt="Mobile Application"
-                                        className="project-image"
-                                        onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/9CA3AF/FFFFFF?text=Project"; } } />
-                                    <h3 className="project-title">{currentLang.project2Title}</h3>
-                                    <p className="project-description">{currentLang.project2Desc}</p>
-                                    <button className="project-link" onClick={() => openProjectPage('project2')}>
-                                        View Project &rarr;
-                                    </button>
-                                </div>
-                                <div className="project-card">
-                                    <img
-                                        src="https://placehold.co/600x400/8B5CF6/FFFFFF?text=Data+Tool"
-                                        alt="Data Analysis Tool"
-                                        className="project-image"
-                                        onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/9CA3AF/FFFFFF?text=Project"; } } />
-                                    <h3 className="project-title">{currentLang.project3Title}</h3>
-                                    <p className="project-description">{currentLang.project3Desc}</p>
-                                    <button className="project-link" onClick={() => openProjectPage('project3')}>
-                                        View Project &rarr;
-                                    </button>
+                                <div className="hero-image-wrapper">
+                                    <div className="hero-image-container">
+                                        <img
+                                            src="/assets/selfie.png"
+                                            alt="Hugo Eklund"
+                                            className="hero-image"
+                                            onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/400x400/9CA3AF/FFFFFF?text=Photo"; } } />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
-
-                    <footer className="main-footer">
-                        <div className="section-container">
-                            <p>&copy; {new Date().getFullYear()} Hugo Eklund. All rights reserved.</p>
-                            <p className="footer-text-secondary">Built with React and CSS. Hosted on my NAS</p>
-                        </div>
-                    </footer>
-                </>
-            )}
-        </div></>
+                        </section>
+                        <section ref={aboutRef} className="about-section">
+                            <div className="section-container text-center">
+                                <h2 className="section-heading section-heading-blue">
+                                    About Me
+                                </h2>
+                                <p className="about-text">
+                                    I am a passionate software developer and computer science engineer with experience in modern web technologies and programming languages. I enjoy creating efficient, scalable solutions and am always eager to learn new technologies and take on challenging projects.
+                                </p>
+                            </div>
+                        </section>
+                        <section ref={skillsRef} className="skills-section">
+                            <div className="section-container text-center">
+                                <h2 className="section-heading section-heading-blue">
+                                    My Skills
+                                </h2>
+                                <div className="skills-grid">
+                                    {skillsList.map((skill, index) => (
+                                        <div key={index} className="skill-item">
+                                            <span className="skill-text">{skill}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </section>
+                        <section ref={projectsRef} className="projects-section">
+                            <div className="section-container text-center">
+                                <h2 className="section-heading section-heading-blue">
+                                    My Projects
+                                </h2>
+                                <div className="projects-grid">
+                                    <div className="project-card">
+                                        <img
+                                            src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Web+App"
+                                            alt="Web Application"
+                                            className="project-image"
+                                            onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/9CA3AF/FFFFFF?text=Project"; } } />
+                                        <h3 className="project-title">Web Application</h3>
+                                        <p className="project-description">A full-stack web application built with React and Node.js featuring user authentication and real-time data processing.</p>
+                                        <button className="project-link" onClick={() => openProjectPage('project1')}>
+                                            View Project &rarr;
+                                        </button>
+                                    </div>
+                                    <div className="project-card">
+                                        <img
+                                            src="https://placehold.co/600x400/10B981/FFFFFF?text=Mobile+App"
+                                            alt="Mobile Application"
+                                            className="project-image"
+                                            onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/9CA3AF/FFFFFF?text=Project"; } } />
+                                        <h3 className="project-title">Mobile App</h3>
+                                        <p className="project-description">Cross-platform mobile application developed with modern frameworks, focusing on user experience and performance.</p>
+                                        <button className="project-link" onClick={() => openProjectPage('project2')}>
+                                            View Project &rarr;
+                                        </button>
+                                    </div>
+                                    <div className="project-card">
+                                        <img
+                                            src="https://placehold.co/600x400/8B5CF6/FFFFFF?text=Data+Tool"
+                                            alt="Data Analysis Tool"
+                                            className="project-image"
+                                            onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/9CA3AF/FFFFFF?text=Project"; } } />
+                                        <h3 className="project-title">Data Analysis Tool</h3>
+                                        <p className="project-description">Python-based data analysis tool with machine learning capabilities for processing large datasets.</p>
+                                        <button className="project-link" onClick={() => openProjectPage('project3')}>
+                                            View Project &rarr;
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <footer className="main-footer">
+                            <div className="section-container">
+                                <p>&copy; {new Date().getFullYear()} Hugo Eklund. All rights reserved.</p>
+                                <p className="footer-text-secondary">Built with React and CSS. Hosted on my NAS</p>
+                            </div>
+                        </footer>
+                    </>
+                )}
+            </div>
+        </>
     );
 };
 
