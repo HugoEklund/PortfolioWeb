@@ -81,190 +81,180 @@ const App = () => {
     const currentLang = content[language];
 
     return (
-        <div className="app-container">
+        <><div className="vignette-bg" aria-hidden="true" /><div className="app-container">
             {activeProject ? (
                 <ProjectPage projectId={activeProject} onBack={closeProjectPage} />
             ) : (
                 <>
-                <header className="main-header">
-                    <nav className="navbar">
-                        <ul className="nav-links">
-                            <li>
-                                <button
-                                    onClick={() => scrollToSection(aboutRef)}
-                                    className="nav-button"
+                    <header className="main-header">
+                        <nav className="navbar">
+                            <ul className="nav-links">
+                                <li>
+                                    <button
+                                        onClick={() => scrollToSection(aboutRef)}
+                                        className="nav-button"
+                                    >
+                                        {currentLang.navAbout}
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        onClick={() => scrollToSection(skillsRef)}
+                                        className="nav-button"
+                                    >
+                                        {currentLang.navSkills}
+                                    </button>
+                                </li>
+                                <li
+                                    className="projects-dropdown"
+                                    onMouseEnter={() => setShowDropdown(true)}
+                                    onMouseLeave={() => setShowDropdown(false)}
+                                    style={{ position: 'relative' }}
                                 >
-                                    {currentLang.navAbout}
-                                </button>
-                            </li>
-                            <li>
-                                <button
-                                    onClick={() => scrollToSection(skillsRef)}
-                                    className="nav-button"
-                                >
-                                    {currentLang.navSkills}
-                                </button>
-                            </li>
-                            <li
-                                className="projects-dropdown"
-                                onMouseEnter={() => setShowDropdown(true)}
-                                onMouseLeave={() => setShowDropdown(false)}
-                                style={{ position: 'relative' }}
-                            >
-                                <button
-                                    onClick={() => scrollToSection(projectsRef)}
-                                    className="nav-button"
-                                    style={{ display: 'flex', alignItems: 'center', gap: '0.3em' }}
-                                >
-                                    {currentLang.navProjects}
-                                    <span className="arrow-down" style={{ fontSize: '0.8em', marginLeft: '0.2em' }}>▶</span>
-                                </button>
-                                {showDropdown && (
-                                    <ul className="dropdown-menu" style={{
-                                        position: 'absolute',
-                                        top: '100%',
-                                        left: 0,
-                                        background: 'var(--medium-grey-bg)',
-                                        boxShadow: '0 4px 16px rgba(0,0,0,0.4)',
-                                        borderRadius: '0.5rem',
-                                        minWidth: '180px',
-                                        zIndex: 1001,
-                                        padding: '0.5rem 0',
-                                        margin: 0
-                                    }}>
-                                        <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', color: 'var(--secondary-text)', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project1')}>Web Application</button></li>
-                                        <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', color: 'var(--secondary-text)', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project2')}>Mobile App</button></li>
-                                        <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', color: 'var(--secondary-text)', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project3')}>Data Analysis Tool</button></li>
-                                    </ul>
-                                )}
-                            </li>
-                            <li>
-                                <button onClick={toggleLanguage} className="language-toggle-button">
-                                    <span className="language-flag" />
-                                </button>
-                            </li>
-                        </ul>
-                    </nav>
-                </header>
+                                    <button
+                                        onClick={() => scrollToSection(projectsRef)}
+                                        className="nav-button"
+                                        style={{ display: 'flex', alignItems: 'center', gap: '0.3em' }}
+                                    >
+                                        {currentLang.navProjects}
+                                        <span className="arrow-down" style={{ fontSize: '0.8em', marginLeft: '0.2em' }}>▶</span>
+                                    </button>
+                                    {showDropdown && (
+                                        <ul className="dropdown-menu" style={{
+                                            position: 'absolute',
+                                            top: '100%',
+                                            left: 0,
+                                            zIndex: 1001
+                                        }}>
+                                            <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', color: 'var(--secondary-text)', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project1')}>Web Application</button></li>
+                                            <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', color: 'var(--secondary-text)', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project2')}>Mobile App</button></li>
+                                            <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', color: 'var(--secondary-text)', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project3')}>Data Analysis Tool</button></li>
+                                        </ul>
+                                    )}
+                                </li>
+                                <li>
+                                    <button onClick={toggleLanguage} className="language-toggle-button">
+                                        <span className="language-flag" />
+                                    </button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </header>
 
-                <section className="hero-section">
-                    <div className="hero-content-wrapper">
-                        <div className="hero-text-content">
-                            <h1 className="hero-name">
-                                {heroName}
-                            </h1>
-                            <p className="hero-title">
-                                {currentLang.heroTitle}
-                            </p>
-                            <div className="social-icons">
-                                <a href={`https://${contactGithub}`} className="social-icon" target="_blank" rel="noopener noreferrer">
-                                    <img src="/assets/github.png" alt="GitHub" className="social-icon-img" />
-                                </a>
-                                <a href={`https://${contactLinkedIn}`} className="social-icon" target="_blank" rel="noopener noreferrer">
-                                    <img src="/assets/linkedin.png" alt="LinkedIn" className="social-icon-img" />
-                                </a>
-                                <a href={`mailto:${contactEmail}`} className="social-icon">
-                                    <img src="/assets/email.png" alt="Email" className="social-icon-img" />
-                                </a>
-                            </div>
-                        </div>
-                        <div className="hero-image-wrapper">
-                            <div className="hero-image-container">
-                                <img
-                                    src="/assets/selfie.png"
-                                    alt="Hugo Eklund"
-                                    className="hero-image"
-                                    onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/400x400/9CA3AF/FFFFFF?text=Photo"; }}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section ref={aboutRef} className="about-section">
-                    <div className="section-container text-center">
-                        <h2 className="section-heading section-heading-blue">
-                            {currentLang.aboutHeading}
-                        </h2>
-                        <p className="about-text">
-                            {currentLang.aboutText}
-                        </p>
-                    </div>
-                </section>
-
-                <section ref={skillsRef} className="skills-section">
-                    <div className="section-container text-center">
-                        <h2 className="section-heading section-heading-blue">
-                            {currentLang.skillsHeading}
-                        </h2>
-                        <div className="skills-grid">
-                            {skillsList.map((skill, index) => (
-                                <div key={index} className="skill-item">
-                                    <span className="skill-text">{skill}</span>
+                    <section className="hero-section">
+                        <div className="hero-content-wrapper">
+                            <div className="hero-text-content">
+                                <h1 className="hero-name">
+                                    {heroName}
+                                </h1>
+                                <p className="hero-title">
+                                    {currentLang.heroTitle}
+                                </p>
+                                <div className="social-icons">
+                                    <a href={`https://${contactGithub}`} className="social-icon" target="_blank" rel="noopener noreferrer">
+                                        <img src="/assets/github.png" alt="GitHub" className="social-icon-img" />
+                                    </a>
+                                    <a href={`https://${contactLinkedIn}`} className="social-icon" target="_blank" rel="noopener noreferrer">
+                                        <img src="/assets/linkedin.png" alt="LinkedIn" className="social-icon-img" />
+                                    </a>
+                                    <a href={`mailto:${contactEmail}`} className="social-icon">
+                                        <img src="/assets/email.png" alt="Email" className="social-icon-img" />
+                                    </a>
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                <section ref={projectsRef} className="projects-section">
-                    <div className="section-container text-center">
-                        <h2 className="section-heading section-heading-blue">
-                            {currentLang.projectsHeading}
-                        </h2>
-                        <div className="projects-grid">
-                            <div className="project-card">
-                                <img
-                                    src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Web+App"
-                                    alt="Web Application"
-                                    className="project-image"
-                                    onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/9CA3AF/FFFFFF?text=Project"; }}
-                                />
-                                <h3 className="project-title">{currentLang.project1Title}</h3>
-                                <p className="project-description">{currentLang.project1Desc}</p>
-                                <button className="project-link" onClick={() => openProjectPage('project1')}>
-                                    View Project &rarr;
-                                </button>
                             </div>
-                            <div className="project-card">
-                                <img
-                                    src="https://placehold.co/600x400/10B981/FFFFFF?text=Mobile+App"
-                                    alt="Mobile Application"
-                                    className="project-image"
-                                    onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/9CA3AF/FFFFFF?text=Project"; }}
-                                />
-                                <h3 className="project-title">{currentLang.project2Title}</h3>
-                                <p className="project-description">{currentLang.project2Desc}</p>
-                                <button className="project-link" onClick={() => openProjectPage('project2')}>
-                                    View Project &rarr;
-                                </button>
-                            </div>
-                            <div className="project-card">
-                                <img
-                                    src="https://placehold.co/600x400/8B5CF6/FFFFFF?text=Data+Tool"
-                                    alt="Data Analysis Tool"
-                                    className="project-image"
-                                    onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/9CA3AF/FFFFFF?text=Project"; }}
-                                />
-                                <h3 className="project-title">{currentLang.project3Title}</h3>
-                                <p className="project-description">{currentLang.project3Desc}</p>
-                                <button className="project-link" onClick={() => openProjectPage('project3')}>
-                                    View Project &rarr;
-                                </button>
+                            <div className="hero-image-wrapper">
+                                <div className="hero-image-container">
+                                    <img
+                                        src="/assets/selfie.png"
+                                        alt="Hugo Eklund"
+                                        className="hero-image"
+                                        onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/400x400/9CA3AF/FFFFFF?text=Photo"; } } />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
-                <footer className="main-footer">
-                    <div className="section-container">
-                        <p>&copy; {new Date().getFullYear()} Hugo Eklund. All rights reserved.</p>
-                        <p className="footer-text-secondary">Built with React and CSS. Hosted on my NAS</p>
-                    </div>
-                </footer>
+                    <section ref={aboutRef} className="about-section">
+                        <div className="section-container text-center">
+                            <h2 className="section-heading section-heading-blue">
+                                {currentLang.aboutHeading}
+                            </h2>
+                            <p className="about-text">
+                                {currentLang.aboutText}
+                            </p>
+                        </div>
+                    </section>
+
+                    <section ref={skillsRef} className="skills-section">
+                        <div className="section-container text-center">
+                            <h2 className="section-heading section-heading-blue">
+                                {currentLang.skillsHeading}
+                            </h2>
+                            <div className="skills-grid">
+                                {skillsList.map((skill, index) => (
+                                    <div key={index} className="skill-item">
+                                        <span className="skill-text">{skill}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    <section ref={projectsRef} className="projects-section">
+                        <div className="section-container text-center">
+                            <h2 className="section-heading section-heading-blue">
+                                {currentLang.projectsHeading}
+                            </h2>
+                            <div className="projects-grid">
+                                <div className="project-card">
+                                    <img
+                                        src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Web+App"
+                                        alt="Web Application"
+                                        className="project-image"
+                                        onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/9CA3AF/FFFFFF?text=Project"; } } />
+                                    <h3 className="project-title">{currentLang.project1Title}</h3>
+                                    <p className="project-description">{currentLang.project1Desc}</p>
+                                    <button className="project-link" onClick={() => openProjectPage('project1')}>
+                                        View Project &rarr;
+                                    </button>
+                                </div>
+                                <div className="project-card">
+                                    <img
+                                        src="https://placehold.co/600x400/10B981/FFFFFF?text=Mobile+App"
+                                        alt="Mobile Application"
+                                        className="project-image"
+                                        onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/9CA3AF/FFFFFF?text=Project"; } } />
+                                    <h3 className="project-title">{currentLang.project2Title}</h3>
+                                    <p className="project-description">{currentLang.project2Desc}</p>
+                                    <button className="project-link" onClick={() => openProjectPage('project2')}>
+                                        View Project &rarr;
+                                    </button>
+                                </div>
+                                <div className="project-card">
+                                    <img
+                                        src="https://placehold.co/600x400/8B5CF6/FFFFFF?text=Data+Tool"
+                                        alt="Data Analysis Tool"
+                                        className="project-image"
+                                        onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/9CA3AF/FFFFFF?text=Project"; } } />
+                                    <h3 className="project-title">{currentLang.project3Title}</h3>
+                                    <p className="project-description">{currentLang.project3Desc}</p>
+                                    <button className="project-link" onClick={() => openProjectPage('project3')}>
+                                        View Project &rarr;
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <footer className="main-footer">
+                        <div className="section-container">
+                            <p>&copy; {new Date().getFullYear()} Hugo Eklund. All rights reserved.</p>
+                            <p className="footer-text-secondary">Built with React and CSS. Hosted on my NAS</p>
+                        </div>
+                    </footer>
                 </>
             )}
-        </div>
+        </div></>
     );
 };
 

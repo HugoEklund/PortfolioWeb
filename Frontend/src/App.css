@@ -81,7 +81,7 @@
 .nav-button {
     background: none;
     border: none;
-    color: var(--light-grey-text);
+    color: var(--white-text);
     font-size: 1.1rem;
     cursor: pointer;
     padding: 0.5rem 1rem;
@@ -148,7 +148,6 @@
     clip-path: polygon(100% 0, 100% 100%, 0 100%);
     opacity: 1;
     z-index: 2;
-    left: 20%;
 }
 
 .hero-section {
@@ -284,7 +283,7 @@
 
 .skill-item {
     background-color: var(--medium-grey-bg);
-    color: var(--light-grey-text);
+    color: var(--white-text);
     padding: 0.8rem 1.5rem;
     border-radius: 0.75rem;
     font-weight: 600;
@@ -356,7 +355,7 @@
 
 .project-description {
     font-size: 1rem;
-    color: var(--light-grey-text);
+    color: var(--white-text);
     margin-bottom: 1.25rem;
     flex-grow: 1;
 }
@@ -389,7 +388,6 @@
     transform: rotate(90deg);
 }
 
-/* Dropdown menu: glass effect, no border */
 .dropdown-menu {
     background: linear-gradient(90deg, rgba(0,190,177,0.18) 0%, rgba(0,0,0,0.7) 100%), rgba(30,30,30,0.92);
     box-shadow: 0 4px 24px 0 rgba(0,190,177,0.13), 0 2px 12px rgba(0,0,0,0.38);
@@ -407,7 +405,7 @@
     width: 100%;
     background: none;
     border: none;
-    color: var(--light-grey-text);
+    color: var(--white-text);
     text-align: left;
     padding: 0.75em 1.5em;
     cursor: pointer;
@@ -430,15 +428,17 @@
     box-shadow: none !important;
 }
 
-/* Stronger vignette for white backgrounds */
-body::before {
-    content: '';
-    position: fixed;
+/* Vignette only at edges, transparent in center, only on background */
+.vignette-bg {
     pointer-events: none;
+    position: fixed;
     z-index: 0;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(ellipse at center, rgba(0,0,0,0.22) 0%, rgba(0,0,0,0.44) 100%);
+    /* Strong vignette at edges, fully transparent in center (30% radius), rapid falloff */
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.22) 60%, rgba(0,0,0,0.44) 100%);
     opacity: 1;
+    /* Only affect background, not text or content */
+    mix-blend-mode: multiply;
 }
 
 /* Social icons: smaller, consistent scaling */
@@ -455,7 +455,7 @@ body::before {
 
 .main-footer {
     background-color: var(--dark-grey-bg);
-    color: var(--light-grey-text);
+    color: var(--white-text);
     padding: 2.5rem 1rem;
     text-align: center;
     border-top: 1px solid var(--border-color);
