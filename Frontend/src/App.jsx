@@ -203,12 +203,13 @@ const App = () => {
                                         fontSize: '2.2rem',
                                         cursor: 'pointer',
                                         transition: 'color 0.2s',
+                                        textAlign: 'center'
                                     }}
                                     onMouseOver={e => e.currentTarget.style.color = '#fff'}
                                     onMouseOut={e => e.currentTarget.style.color = 'var(--accent-main)'}
                                 >
-                                    ▲
-                                To the top
+                                    <span style={{ display: 'block', fontSize: '2.2rem', lineHeight: 1 }}>▲</span>
+                                    <span style={{ display: 'block', fontSize: '1.1rem', color: '#fff', marginTop: '0.1em', letterSpacing: '0.02em' }}>To the top</span>
                                 </button>
                                 <p>&copy; {new Date().getFullYear()} Hugo Eklund All rights reserved.</p>
                                 <p className="footer-text-secondary">Built with React and CSS. Hosted on my NAS</p>
