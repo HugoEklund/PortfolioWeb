@@ -35,7 +35,7 @@
 }
 
 .main-header {
-    /*background: linear-gradient(90deg, rgba(0,190,177,0.18) 0%, rgba(0,0,0,0.7) 100%), rgba(30,30,30,0.92);*/
+    background: linear-gradient(90deg, rgba(0,190,177,0.18) 0%, rgba(0,0,0,0.5) 100%), rgba(30,30,30,0.92);
     padding: 1rem 0;
     position: sticky;
     top: 0;
@@ -147,7 +147,7 @@
     text-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 .social-icons {
-    margin-bottom: 2.25rem;
+    margin-bottom: 3rem;
     display: flex;
     flex-direction: row;
     gap: 1.1rem;
@@ -162,16 +162,6 @@
     z-index: 2;
     background: none;
     padding: 3rem 0 3rem 2rem;
-}
-.hero-image-container {
-    width: 420px;
-    height: 420px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 7px solid var(--accent-main);
-    box-shadow: 0 0 50px 0 rgba(0,190,177,0.28), 0 8px 40px rgba(0,0,0,0.28);
-    background: linear-gradient(135deg, var(--dark-grey-bg) 60%, var(--accent-main) 100%);
-    position: relative;
 }
 .hero-image {
     width: 100%;
@@ -190,10 +180,6 @@
     }
     .hero-text-content, .hero-image-wrapper {
         padding: 2rem 0;
-    }
-    .hero-image-container {
-        width: 220px;
-        height: 220px;
     }
 }
 
@@ -237,7 +223,7 @@
 
 .skill-item:hover {
     transform: translateY(-2px) scale(1.02);
-    background-color: var(--accent-dark);
+    background-color: var(--accent-main);
 }
 
 .skill-text {
@@ -331,7 +317,7 @@
 }
 
 .dropdown-menu {
-    /*background: linear-gradient(90deg, rgba(0,190,177,0.18) 0%, rgba(0,0,0,0.7) 100%), rgba(30,30,30,0.92);*/
+    background: linear-gradient(90deg, rgba(0,190,177,0.18) 0%, rgba(0,0,0,0.5) 100%), rgba(30,30,30,0.92);
     box-shadow: 0 4px 24px 0 rgba(0,190,177,0.13), 0 2px 12px rgba(0,0,0,0.38);
     border-radius: 0.5rem;
     min-width: 180px;
@@ -375,19 +361,19 @@
     position: absolute;
     z-index: 1;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.10) 40%, rgba(0,0,0,0.22) 75%, rgba(0,0,0,0.64) 100%);
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.10) 40%, rgba(0,0,0,0.22) 75%, rgba(0, 0, 0, 0.44) 100%);
     opacity: 1;
     mix-blend-mode: multiply;
 }
 
 .social-icon-img {
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 3rem;
+    height: 3rem;
     margin-right: 0.18rem;
     transition: transform 0.22s cubic-bezier(0.23,1,0.32,1), box-shadow 0.22s, background 0.22s;
     border-radius: 50%;
     box-shadow: 0 2px 8px rgba(0,190,177,0.12);
-    background: white;
+    background: black;
     padding: 0.08rem;
 }
 .social-icon-img:hover {
@@ -450,10 +436,6 @@ a:focus-visible {
     }
     .social-icons {
         justify-content: center;
-    }
-    .hero-image-container {
-        width: 500px;
-        height: 500px;
     }
     .section-heading {
         font-size: 2rem;

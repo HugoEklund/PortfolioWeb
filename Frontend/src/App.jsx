@@ -110,14 +110,12 @@ const App = () => {
                                     </div>
                                 </div>
                                 <div className="hero-image-wrapper">
-                                    <div className="hero-image-container">
-                                        <img
+                                    <img
                                             src="/assets/selfie.png"
                                             alt="Hugo Eklund"
                                             className="hero-image"
                                             onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/400x400/9CA3AF/FFFFFF?text=Photo"; } } />
                                     </div>
-                                </div>
                             </div>
                         </section>
                         <section ref={aboutRef} className="about-section">
@@ -192,7 +190,26 @@ const App = () => {
                         </section>
                         <footer className="main-footer">
                             <div className="section-container">
-                                <p>&copy; {new Date().getFullYear()} Hugo Eklund. All rights reserved.</p>
+                                <button
+                                    className="to-top-btn"
+                                    aria-label="Scroll to top"
+                                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                                    style={{
+                                        display: 'block',
+                                        margin: '0 auto 1.5rem auto',
+                                        background: 'none',
+                                        border: 'none',
+                                        color: 'var(--accent-main)',
+                                        fontSize: '2.2rem',
+                                        cursor: 'pointer',
+                                        transition: 'color 0.2s',
+                                    }}
+                                    onMouseOver={e => e.currentTarget.style.color = '#fff'}
+                                    onMouseOut={e => e.currentTarget.style.color = 'var(--accent-main)'}
+                                >
+                                    ▲
+                                </button>
+                                <p>&copy; {new Date().getFullYear()} Hugo Eklund All rights reserved.</p>
                                 <p className="footer-text-secondary">Built with React and CSS. Hosted on my NAS</p>
                             </div>
                         </footer>
