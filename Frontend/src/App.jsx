@@ -7,6 +7,13 @@ const App = () => {
     const aboutRef = useRef(null);
     const skillsRef = useRef(null);
     const projectsRef = useRef(null);
+    const heroName = 'Hugo Eklund';
+    const skillsList = [
+                'C#', 'Winforms', 'Java', 'React.js', 'Python', 'SQL', 'Cloud Platforms (AWS)', 'Git', 'Agile Methodologies (Scrum & Kanban)'
+            ];
+    const contactEmail = 'eklund.hugo@gmail.com';
+    const contactLinkedIn =  'linkedin.com/in/hugo-eklund-6003a2257';
+    const contactGithub = 'github.com/HugoEklund';
 
     const content = {
         en: {
@@ -14,15 +21,10 @@ const App = () => {
             navSkills: 'Skills',
             navProjects: 'Projects',
             heroGreeting: 'Hi, I am',
-            heroName: 'Hugo Eklund',
             heroTitle: 'Software Developer & Computer Science Engineer',
             aboutHeading: 'About Me',
             aboutText: 'I am a passionate software developer and computer science engineer with experience in modern web technologies and programming languages. I enjoy creating efficient, scalable solutions and am always eager to learn new technologies and take on challenging projects.',
             skillsHeading: 'My Skills',
-            skillsList: [
-                'C#', 'Java', 'React.js', 'Node.js', 'Python',
-                'Git', 'SQL', 'Cloud Platforms (AWS)', 'Agile Methodologies (Scrum/Kanban)'
-            ],
             projectsHeading: 'My Projects',
             project1Title: 'Web Application',
             project1Desc: 'A full-stack web application built with React and Node.js featuring user authentication and real-time data processing.',
@@ -30,9 +32,6 @@ const App = () => {
             project2Desc: 'Cross-platform mobile application developed with modern frameworks, focusing on user experience and performance.',
             project3Title: 'Data Analysis Tool',
             project3Desc: 'Python-based data analysis tool with machine learning capabilities for processing large datasets.',
-            contactEmail: 'eklund.hugo@gmail.com',
-            contactLinkedIn: 'linkedin.com/in/hugo-eklund-6003a2257',
-            contactGithub: 'github.com/HugoEklund',
             buttonReadMore: 'Read More',
             buttonExplore: 'Explore'
         },
@@ -41,15 +40,10 @@ const App = () => {
             navSkills: 'Färdigheter',
             navProjects: 'Projekt',
             heroGreeting: 'Hej, jag är',
-            heroName: 'Hugo Eklund',
             heroTitle: 'Mjukvaruutvecklare | Ingenjör inom Datateknik',
             aboutHeading: 'Om Mig',
             aboutText: 'Jag är en passionerad mjukvaruutvecklare och dataingenjör med erfarenhet av moderna webbteknologier och programmeringsspråk. Jag tycker om att skapa effektiva, skalbara lösningar och är alltid sugen på att lära mig nya teknologier och ta på mig utmanande projekt.',
             skillsHeading: 'Mina Färdigheter',
-            skillsList: [
-                'C#', 'Java', 'React.js', 'Node.js', 'Python',
-                'Git', 'SQL', 'Molnplatformar (AWS)', 'Agila arbetsmetoder (Scrum/Kanban)'
-            ],
             projectsHeading: 'Mina Projekt',
             project1Title: 'Webbapplikation',
             project1Desc: 'En fullstack-webbapplikation byggd med React och Node.js med användarautentisering och realtidsdatabehandling.',
@@ -57,9 +51,6 @@ const App = () => {
             project2Desc: 'Plattformsoberoende mobilapplikation utvecklad med moderna ramverk, fokus på användarupplevelse och prestanda.',
             project3Title: 'Dataanalysverktyg',
             project3Desc: 'Python-baserat dataanalysverktyg med maskininlärningskapacitet för bearbetning av stora datamängder.',
-            contactEmail: 'eklund.hugo@gmail.com',
-            contactLinkedIn: 'linkedin.com/in/hugo-eklund-6003a2257',
-            contactGithub: 'github.com/HugoEklund',
             buttonReadMore: 'Läs Mer',
             buttonExplore: 'Utforska'
         }
@@ -123,19 +114,19 @@ const App = () => {
                 <div className="hero-content-wrapper">
                     <div className="hero-text-content">
                         <h1 className="hero-name">
-                            {currentLang.heroName}
+                            {heroName}
                         </h1>
                         <p className="hero-title">
                             {currentLang.heroTitle}
                         </p>
                         <div className="social-icons">
-                            <a href={`https://${currentLang.contactGithub}`} className="social-icon" target="_blank" rel="noopener noreferrer">
+                            <a href={`https://${contactGithub}`} className="social-icon" target="_blank" rel="noopener noreferrer">
                                 <img src="/assets/github.png" alt="GitHub" className="social-icon-img" />
                             </a>
-                            <a href={`https://${currentLang.contactLinkedIn}`} className="social-icon" target="_blank" rel="noopener noreferrer">
+                            <a href={`https://${contactLinkedIn}`} className="social-icon" target="_blank" rel="noopener noreferrer">
                                 <img src="/assets/linkedin.png" alt="LinkedIn" className="social-icon-img" />
                             </a>
-                            <a href={`mailto:${currentLang.contactEmail}`} className="social-icon">
+                            <a href={`mailto:${contactEmail}`} className="social-icon">
                                 <img src="/assets/email.png" alt="Email" className="social-icon-img" />
                             </a>
                         </div>
@@ -170,7 +161,7 @@ const App = () => {
                         {currentLang.skillsHeading}
                     </h2>
                     <div className="skills-grid">
-                        {currentLang.skillsList.map((skill, index) => (
+                        {skillsList.map((skill, index) => (
                             <div key={index} className="skill-item">
                                 <span className="skill-text">{skill}</span>
                             </div>
@@ -231,7 +222,7 @@ const App = () => {
             <footer className="main-footer">
                 <div className="section-container">
                     <p>&copy; {new Date().getFullYear()} Hugo Eklund. All rights reserved.</p>
-                    <p className="footer-text-secondary">Built with React and CSS. Hosted on Hugos NAS</p>
+                    <p className="footer-text-secondary">Built with React and CSS. Hosted on my NAS</p>
                 </div>
             </footer>
         </div>
