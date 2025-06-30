@@ -150,36 +150,27 @@ const App = () => {
                                 </h2>
                                 <div className="projects-grid">
                                     <div className="project-card">
-                                        <img
-                                            src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Web+App"
-                                            alt="Web Application"
-                                            className="project-image"
-                                        />
-                                        <h3 className="project-title">Thesis work</h3>
+                                        <div className="project-image project-image-bg" style={{ background: '#3B82F6', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '200px' }}>
+                                            <span className="project-image-title" style={{ color: '#fff', fontWeight: 700, fontSize: '2rem', letterSpacing: '0.02em' }}>Thesis work</span>
+                                        </div>
                                         <p className="project-description">Yeah</p>
                                         <button className="project-link" onClick={() => openProjectPage('project1')}>
                                             View Project &rarr;
                                         </button>
                                     </div>
                                     <div className="project-card">
-                                        <img
-                                            src="https://placehold.co/600x400/10B981/FFFFFF?text=Mobile+App"
-                                            alt="Mobile Application"
-                                            className="project-image"
-                                        />
-                                        <h3 className="project-title">Website</h3>
+                                        <div className="project-image project-image-bg" style={{ background: '#10B981', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '200px' }}>
+                                            <span className="project-image-title" style={{ color: '#fff', fontWeight: 700, fontSize: '2rem', letterSpacing: '0.02em' }}>Website</span>
+                                        </div>
                                         <p className="project-description">This website lol</p>
                                         <button className="project-link" onClick={() => openProjectPage('project2')}>
                                             View Project &rarr;
                                         </button>
                                     </div>
                                     <div className="project-card">
-                                        <img
-                                            src="https://placehold.co/600x400/8B5CF6/FFFFFF?text=Data+Tool"
-                                            alt="Data Analysis Tool"
-                                            className="project-image"
-                                        />
-                                        <h3 className="project-title">temp</h3>
+                                        <div className="project-image project-image-bg" style={{ background: '#8B5CF6', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '200px' }}>
+                                            <span className="project-image-title" style={{ color: '#fff', fontWeight: 700, fontSize: '2rem', letterSpacing: '0.02em' }}>temp</span>
+                                        </div>
                                         <p className="project-description">temp</p>
                                         <button className="project-link" onClick={() => openProjectPage('project3')}>
                                             View Project &rarr;
@@ -194,17 +185,6 @@ const App = () => {
                                     className="to-top-btn"
                                     aria-label="Scroll to top"
                                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                                    style={{
-                                        display: 'block',
-                                        margin: '0 auto 1.5rem auto',
-                                        background: 'none',
-                                        border: 'none',
-                                        color: 'var(--accent-main)',
-                                        fontSize: '2.2rem',
-                                        cursor: 'pointer',
-                                        transition: 'color 0.2s',
-                                        textAlign: 'center'
-                                    }}
                                     onMouseOver={e => e.currentTarget.style.color = '#fff'}
                                     onMouseOut={e => e.currentTarget.style.color = 'var(--accent-main)'}
                                 >
