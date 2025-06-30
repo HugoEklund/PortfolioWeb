@@ -110,12 +110,12 @@ const App = () => {
                                     </div>
                                 </div>
                                 <div className="hero-image-wrapper">
-                                        <img
-                                            src="/assets/selfie.png"
-                                            alt="Hugo Eklund"
-                                            className="hero-image"
-                                        />
-                                    </div>
+                                    <img
+                                        src="/assets/selfie.png"
+                                        alt="Hugo Eklund"
+                                        className="hero-image"
+                                    />
+                                </div>
                             </div>
                         </section>
                         <section ref={aboutRef} className="about-section">
@@ -211,7 +211,7 @@ const App = () => {
                                     <span style={{ display: 'block', fontSize: '2.2rem', lineHeight: 1 }}>▲</span>
                                     <span style={{ display: 'block', fontSize: '1.1rem', color: '#fff', marginTop: '0.1em', letterSpacing: '0.02em' }}>To the top</span>
                                 </button>
-                                <p>&copy; {new Date().getFullYear()} Hugo Eklund All rights reserved.</p>
+                                <p>&copy; {new Date().getFullYear()} Hugo Eklund. All rights reserved.</p>
                                 <p className="footer-text-secondary">Built with React and CSS. Hosted on my NAS</p>
                             </div>
                         </footer>

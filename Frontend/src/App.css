@@ -112,7 +112,9 @@
 .hero-content-wrapper {
     position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
     width: 100%;
     max-width: 72rem;
     z-index: 1;
@@ -155,13 +157,13 @@
     justify-content: flex-start;
 }
 .hero-image-wrapper {
-    flex: 1 1 0;
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    align-items: flex-end;
+    justify-content: center;
     z-index: 2;
     background: none;
-    padding: 3rem 5rem 0rem 2rem;
+    padding: 2rem 0 0 0;
+    width: 100%;
 }
 .hero-image {
     width: 100%;
@@ -173,13 +175,17 @@
 
 @media (max-width: 900px) {
     .hero-content-wrapper {
+        position: relative;
+        display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 2rem 1rem;
-        min-height: 0;
-    }
-    .hero-text-content, .hero-image-wrapper {
-        padding: 2rem 0;
+        justify-content: flex-end;
+        width: 100%;
+        max-width: 72rem;
+        z-index: 1;
+        min-height: 480px;
+        padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+        gap: 0;
     }
 }
 
