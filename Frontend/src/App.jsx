@@ -78,9 +78,9 @@ const App = () => {
                                                 left: 0,
                                                 zIndex: 1001
                                             }}>
-                                                <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project1')}>Web Application</button></li>
-                                                <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project2')}>Mobile App</button></li>
-                                                <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project3')}>Data Analysis Tool</button></li>
+                                                <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project1')}>Thesis work</button></li>
+                                                <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project2')}>Website</button></li>
+                                                <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project3')}>temp</button></li>
                                             </ul>
                                         )}
                                     </li>
@@ -111,9 +111,9 @@ const App = () => {
                                 </div>
                                 <div className="hero-image-wrapper">
                                         <img
-                                                src="/assets/selfie.png"
-                                                alt="Hugo Eklund"
-                                                className="hero-image"
+                                            src="/assets/selfie.png"
+                                            alt="Hugo Eklund"
+                                            className="hero-image"
                                         />
                                     </div>
                             </div>

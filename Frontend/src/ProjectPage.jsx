@@ -2,19 +2,19 @@ import React from 'react';
 
 const projectData = {
     project1: {
-        title: 'Web Application',
-        description: 'A full-stack web application built with React and Node.js featuring user authentication and real-time data processing.',
-        details: 'This project demonstrates a modern web stack with authentication, real-time updates, and a scalable architecture. Technologies: React, Node.js, Express, MongoDB.'
+        title: 'Thesis work',
+        description: 'temp description',
+        details: 'temp details'
     },
     project2: {
-        title: 'Mobile App',
-        description: 'Cross-platform mobile application developed with modern frameworks, focusing on user experience and performance.',
-        details: 'A mobile app built with React Native, supporting both iOS and Android, with a focus on smooth UX and high performance.'
+        title: 'Website',
+        description: 'temp description',
+        details: 'temp details'
     },
     project3: {
-        title: 'Data Analysis Tool',
-        description: 'Python-based data analysis tool with machine learning capabilities for processing large datasets.',
-        details: 'A desktop tool for data analysis, visualization, and machine learning, built with Python and popular data science libraries.'
+        title: 'temp',
+        description: 'temp description',
+        details: 'temp details'
     }
 };
 
