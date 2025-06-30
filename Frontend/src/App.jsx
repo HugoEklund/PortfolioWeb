@@ -140,11 +140,7 @@ const App = () => {
                             </li>
                             <li>
                                 <button onClick={toggleLanguage} className="language-toggle-button">
-                                    <img
-                                        src={language === 'en' ? '/assets/flagSE.png' : '/assets/flagEN.png'}
-                                        alt={language === 'en' ? 'Swedish Flag' : 'English Flag'}
-                                        className="language-flag"
-                                    />
+                                    <span className="language-flag" />
                                 </button>
                             </li>
                         </ul>
