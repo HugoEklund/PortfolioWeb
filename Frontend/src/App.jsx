@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react';
 import './App.css';
-import ProjectPage from './ProjectPage';
+import ProjectsPage from './ProjectsPage';
+import { projects } from './ProjectsData';
+
 
 const App = () => {
     const aboutRef = useRef(null);
@@ -23,31 +25,31 @@ const App = () => {
     };
 
     const [lastScroll, setLastScroll] = useState(null);
-    
-    const openProjectPage = (projectId) => {
+
+    const openProjectsPage = (projectId) => {
         setLastScroll(window.scrollY);
         setActiveProject(projectId);
         setShowDropdown(false);
     };
 
-    const closeProjectPage = () => {
-    setActiveProject(null);
-    setTimeout(() => {
-        if (lastScroll !== null) {
-            const html = document.documentElement;
-            const prevScrollBehavior = html.style.scrollBehavior;
-            html.style.scrollBehavior = 'auto';
-            window.scrollTo({ top: lastScroll });
-            html.style.scrollBehavior = prevScrollBehavior || '';
-        }
-    }, 0);
-};
+    const closeProjectsPage = () => {
+        setActiveProject(null);
+        setTimeout(() => {
+            if (lastScroll !== null) {
+                const html = document.documentElement;
+                const prevScrollBehavior = html.style.scrollBehavior;
+                html.style.scrollBehavior = 'auto';
+                window.scrollTo({ top: lastScroll });
+                html.style.scrollBehavior = prevScrollBehavior || '';
+            }
+        }, 0);
+    };
 
     return (
         <>
             <div className="app-container">
                 {activeProject ? (
-                    <ProjectPage projectId={activeProject} onBack={closeProjectPage} />
+                    <ProjectsPage projectId={activeProject} onBack={closeProjectsPage} />
                 ) : (
                     <>
                         <header className="main-header">
@@ -90,9 +92,24 @@ const App = () => {
                                                 left: 0,
                                                 zIndex: 1001
                                             }}>
-                                                <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project1')}>Thesis work</button></li>
-                                                <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project2')}>Website</button></li>
-                                                <li><button className="dropdown-item" style={{ width: '100%', background: 'none', border: 'none', textAlign: 'left', padding: '0.75em 1.5em', cursor: 'pointer' }} onClick={() => openProjectPage('project3')}>temp</button></li>
+                                                {projects.map(project => (
+                                                    <li key={project.id}>
+                                                        <button
+                                                            className="dropdown-item"
+                                                            style={{
+                                                                width: '100%',
+                                                                background: 'none',
+                                                                border: 'none',
+                                                                textAlign: 'left',
+                                                                padding: '0.75em 1.5em',
+                                                                cursor: 'pointer'
+                                                            }}
+                                                            onClick={() => openProjectsPage(project.id)}
+                                                        >
+                                                            {project.name}
+                                                        </button>
+                                                    </li>
+                                                ))}
                                             </ul>
                                         )}
                                     </li>
@@ -161,33 +178,32 @@ const App = () => {
                                     My Projects
                                 </h2>
                                 <div className="projects-grid">
-                                    <div className="project-card">
-                                        <div className="project-image project-image-bg" style={{ background: '#3B82F6', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '200px' }}>
-                                            <span className="project-image-title" style={{ color: '#fff', fontWeight: 700, fontSize: '2rem', letterSpacing: '0.02em' }}>Thesis work</span>
+                                    {projects.map(project => (
+                                        <div className="project-card" key={project.id}>
+                                            <div className="project-image project-image-bg"
+                                                style={{
+                                                    background: project.color,
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    height: '200px'
+                                                }}>
+                                                <span className="project-image-title"
+                                                    style={{
+                                                        color: '#fff',
+                                                        fontWeight: 700,
+                                                        fontSize: '2rem',
+                                                        letterSpacing: '0.02em'
+                                                    }}>
+                                                    {project.name}
+                                                </span>
+                                            </div>
+                                            <p className="project-description">{project.description}</p>
+                                            <button className="project-link" onClick={() => openProjectsPage(project.id)}>
+                                                View Project &rarr;
+                                            </button>
                                         </div>
-                                        <p className="project-description">Yeah</p>
-                                        <button className="project-link" onClick={() => openProjectPage('project1')}>
-                                            View Project &rarr;
-                                        </button>
-                                    </div>
-                                    <div className="project-card">
-                                        <div className="project-image project-image-bg" style={{ background: '#10B981', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '200px' }}>
-                                            <span className="project-image-title" style={{ color: '#fff', fontWeight: 700, fontSize: '2rem', letterSpacing: '0.02em' }}>Website</span>
-                                        </div>
-                                        <p className="project-description">This website lol</p>
-                                        <button className="project-link" onClick={() => openProjectPage('project2')}>
-                                            View Project &rarr;
-                                        </button>
-                                    </div>
-                                    <div className="project-card">
-                                        <div className="project-image project-image-bg" style={{ background: '#8B5CF6', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '200px' }}>
-                                            <span className="project-image-title" style={{ color: '#fff', fontWeight: 700, fontSize: '2rem', letterSpacing: '0.02em' }}>temp</span>
-                                        </div>
-                                        <p className="project-description">temp</p>
-                                        <button className="project-link" onClick={() => openProjectPage('project3')}>
-                                            View Project &rarr;
-                                        </button>
-                                    </div>
+                                    ))}
                                 </div>
                             </div>
                         </section>
@@ -198,7 +214,7 @@ const App = () => {
                                     className="to-top-arrow"
                                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                                 >
-                                    <img src="/assets/arrow.svg" alt="arrow" style={{ transform: 'rotate(180deg)', width: '50px', height: '50px', display: 'block', margin: '0 auto' }}/>
+                                    <img src="/assets/arrow.svg" alt="arrow" style={{ transform: 'rotate(180deg)', width: '50px', height: '50px', display: 'block', margin: '0 auto' }} />
                                 </button>
                                 <span style={{ display: 'block', fontSize: '1.1rem', color: '#fff', marginTop: '0.1em', letterSpacing: '0.02em' }}>To the top</span>
                                 <p style={{ marginTop: '2rem' }}>&copy; {new Date().getFullYear()} Hugo Eklund. All rights reserved.</p>
