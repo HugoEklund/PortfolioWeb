@@ -17,7 +17,7 @@ terrible at frontend design and I most definitely vibe coded all the CSS for thi
 
 \'\'\'C#
 
-Console.Writeline("Hello World")
+Console.Writeline("Code test")
 
 \'\'\'
 
