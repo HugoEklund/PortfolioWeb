@@ -13,6 +13,14 @@ I chose to use Docker due to the ADM's native lack of support for a certain Node
 The website is built using React.js on top of a Vite template and is styled with traditional CSS, i.e. no Tailwind or other React components were used because I'm 
 terrible at frontend design and I most definitely vibe coded all the CSS for this website.
 
+![Foams](https://raw.githubusercontent.com/HugoEklund/PortfolioWeb/main/Frontend/public/assets/foams.jpg)
+
+\'\'\'C#
+
+Console.Writeline("Hello World")
+
+\'\'\'
+
 Technical Stack and Development Details
 Frontend: React.js, Vite (for tooling), and traditional CSS.
 Backend: PHP (for webhook handling) and Apache HTTP Server.

@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { projects } from './ProjectsData';
 
 const ProjectsPage = ({ projectId, onBack }) => {
@@ -13,7 +15,28 @@ const ProjectsPage = ({ projectId, onBack }) => {
             <h1 style={{ color: 'var(--accent-main)' }}>{project.name}</h1>
             <p style={{ fontSize: '1.2rem', marginBottom: '1.5rem' }}>{project.description}</p>
             <div className="markdown-content">
-                <ReactMarkdown>{project.details}</ReactMarkdown>
+                <ReactMarkdown
+                    children={project.details}
+                    components={{
+                        code(props) {
+                            const {children, className, node, ...rest} = props
+                            const match = /language-(\w+)/.exec(className || '')
+                            return match ? (
+                                <SyntaxHighlighter
+                                    {...rest}
+                                    children={String(children).replace(/\n$/, '')}
+                                    style={vscDarkPlus} // The theme you imported
+                                    language={match[1]}
+                                    PreTag="div"
+                                />
+                            ) : (
+                                <code {...rest} className={className}>
+                                    {children}
+                                </code>
+                            )
+                        }
+                    }}
+                />
             </div>
         </div>
     );
