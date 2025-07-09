@@ -1,4 +1,4 @@
-import webDetails from '../README.md?raw';
+import webDetails from '../../README.md?raw';
 
 export const projects = [
     {
