@@ -1,5 +1,5 @@
-This project is a fullstack web application built with React.js and hosted on my Asustor NAS - running ADM - as an Apache HTTP server, 
-serving as a personal portfolio, designed to showcase my skills and some of the projects I've worked on. 
+This project is a fullstack web application built with React.js and hosted on an Asustor NAS - running ADM - as an Apache HTTP server.
+It aims to serve as a personal portfolio, designed to showcase my skills and some of the projects I've worked on. 
         
 The deployment pipeline is engineered for an efficient and rapid CI/CD (Continuous Integration/Continuous Deployment) workflow. 
 When new versions are pushed to the GitHub repository, a Webhook triggers a GET request to a specific port on the NAS. 
