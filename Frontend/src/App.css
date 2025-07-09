@@ -454,6 +454,36 @@
     margin-top: 0.75rem;
 }
 
+.markdown-content {
+    color: var(--light-grey-text);
+    line-height: 1.6;
+}
+
+.markdown-content img {
+    max-width: 100%;
+    border-radius: 0.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.markdown-content h3 {
+    color: var(--accent-main);
+    margin: 2rem 0 1rem 0;
+}
+
+.markdown-content a {
+    color: var(--accent-main);
+    text-decoration: none;
+}
+
+.markdown-content a:hover {
+    text-decoration: underline;
+}
+
+.markdown-content p {
+    margin: 1rem 0;
+}
+
 button:focus,
 button:focus-visible,
 .nav-button:focus,
