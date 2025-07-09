@@ -25,7 +25,7 @@ const ProjectsPage = ({ projectId, onBack }) => {
                                 <SyntaxHighlighter
                                     {...rest}
                                     children={String(children).replace(/\n$/, '')}
-                                    style={vscDarkPlus} // The theme you imported
+                                    style={vscDarkPlus}
                                     language={match[1]}
                                     PreTag="div"
                                 />
