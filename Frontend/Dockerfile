@@ -4,16 +4,15 @@ RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
 WORKDIR /app
 
-RUN chown appuser:appgroup /app
-
-COPY package.json package-lock.json ./
+COPY Frontend/package.json Frontend/package-lock.json ./
 RUN chown appuser:appgroup package.json package-lock.json
 
 USER appuser
 RUN npm install --frozen-lockfile
 
 USER root
-COPY . .
+COPY Frontend/. .
+COPY README.md ./README.md
 RUN chown -R appuser:appgroup .
 
 USER appuser
