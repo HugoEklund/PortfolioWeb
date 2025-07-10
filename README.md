@@ -16,12 +16,10 @@ terrible at frontend design and I most definitely vibe coded all the CSS for thi
 ![Foams](https://raw.githubusercontent.com/HugoEklund/PortfolioWeb/main/Frontend/public/assets/foams.jpg)
 
 ```csharp
-Console.Writeline("test")
+Console.Writeline("Code snippet")
 ```
 
 Technical Stack and Development Details
 Frontend: React.js, Vite (for tooling), and traditional CSS.
 Backend: PHP (for webhook handling) and Apache HTTP Server.
 DevOps: Docker, Git, GitHub Webhooks.
-
-testing
