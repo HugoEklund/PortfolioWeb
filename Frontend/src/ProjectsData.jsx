@@ -34,13 +34,17 @@ edge- and server-based approaches were found to be negligible.`.trim()
         description: 'The fullstack development of this website.',
         details: `${webDetails}
 
-The complete source code for the web application is available on [github](https://github.com/HugoEklund/PortfolioWeb).`.trim()},
+The complete source code for the web application is available on [Github](https://github.com/HugoEklund/PortfolioWeb).`.trim()
+    },
     {
         id: 'project3',
         name: 'Vehicle Database',
         color: '#F59E0B',
         description: 'A fullstack web application for managing vehicle data.',
-        details: 'temp details'
+        details: 
+`temp details
+
+![Foams](https://raw.githubusercontent.com/HugoEklund/PortfolioWeb/main/Frontend/public/assets/foams.jpg)`.trim()
     },
     {
         id: 'project4',
