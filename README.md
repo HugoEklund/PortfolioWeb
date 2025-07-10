@@ -14,7 +14,7 @@ The website is built using React.js on top of a Vite template and is styled with
 terrible at frontend design and I most definitely vibe coded all the CSS for this website.
 
 ```csharp
-Console.Writeline("Code snippet")
+Console.Writeline("coding!!")
 ```
 
 Technical Stack and Development Details
