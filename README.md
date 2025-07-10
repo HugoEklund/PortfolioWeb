@@ -15,11 +15,9 @@ terrible at frontend design and I most definitely vibe coded all the CSS for thi
 
 ![Foams](https://raw.githubusercontent.com/HugoEklund/PortfolioWeb/main/Frontend/public/assets/foams.jpg)
 
-\'\'\'C#
-
+```csharp
 Console.Writeline("Code testing")
-
-\'\'\'
+```
 
 Technical Stack and Development Details
 Frontend: React.js, Vite (for tooling), and traditional CSS.
