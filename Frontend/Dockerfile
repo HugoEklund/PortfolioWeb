@@ -18,4 +18,6 @@ COPY README.md ./README.md
 RUN chown -R appuser:appgroup .
 
 USER appuser
+RUN chmod -R +x node_modules/.bin/
+
 RUN npm run build
