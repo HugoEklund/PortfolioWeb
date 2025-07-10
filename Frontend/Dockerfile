@@ -20,6 +20,5 @@ RUN chown -R appuser:appgroup .
 USER appuser
 
 RUN chmod +x node_modules/vite/bin/vite.js
-RUN chmod -R +x node_modules/.bin/
 
 RUN npm run build
