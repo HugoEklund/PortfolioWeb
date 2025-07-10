@@ -25,8 +25,11 @@ resources while server-based classification offered greater potential for hardwa
 scalability and upgrades. However, classification results were negatively impacted 
 by limitations in the YAMNet model, particularly for sound events underrepresented 
 in its training data. Differences in response times and hardware load between the 
-edge- and server-based approaches were found to be negligible.`.trim()
+edge- and server-based approaches were found to be negligible.
+
+The full paper can be found and read at [LUP Student Papers](https://lup.lub.lu.se/student-papers/search/publication/9202383)`.trim()
     },
+    
     {
         id: 'project2',
         name: 'Portfolio',
@@ -36,19 +39,26 @@ edge- and server-based approaches were found to be negligible.`.trim()
 
 The complete source code for the web application is available on [Github](https://github.com/HugoEklund/PortfolioWeb).`.trim()
     },
+
     {
         id: 'project3',
         name: 'Vehicle Database',
         color: '#F59E0B',
         description: 'A fullstack web application for managing vehicle data.',
-        details: 
-`![Foams](https://raw.githubusercontent.com/HugoEklund/PortfolioWeb/main/Frontend/public/assets/foams.jpg)`.trim()
+        details:
+`
+
+The complete source code for the web application is available on [Github](https://github.com/HugoEklund/Vehicle-Database).`.trim()
     },
+
     {
         id: 'project4',
         name: 'Monogame Shooter',
         color: '#8B5CF6',
         description: 'A 2D endless runner built in C# using Monogame.',
-        details: 'temp details'
+        details:
+`![Foams](https://raw.githubusercontent.com/HugoEklund/PortfolioWeb/main/Frontend/public/assets/foams.jpg)
+
+The complete source code for the web application is available on [Github](https://github.com/HugoEklund/Monogame-Shooter).`.trim()
     }
 ];
