@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'; 
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { projects } from './ProjectsData';
 
 const ProjectsPage = ({ projectId, onBack }) => {
@@ -25,7 +25,7 @@ const ProjectsPage = ({ projectId, onBack }) => {
                                 <SyntaxHighlighter
                                     {...rest}
                                     children={String(children).replace(/\n$/, '')}
-                                    style={atomOneDark}
+                                    style={vscDarkPlus}
                                     language={match[1]}
                                     PreTag="div"
                                 />

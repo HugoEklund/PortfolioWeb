@@ -42,9 +42,7 @@ The complete source code for the web application is available on [Github](https:
         color: '#F59E0B',
         description: 'A fullstack web application for managing vehicle data.',
         details: 
-`temp details
-
-![Foams](https://raw.githubusercontent.com/HugoEklund/PortfolioWeb/main/Frontend/public/assets/foams.jpg)`.trim()
+`![Foams](https://raw.githubusercontent.com/HugoEklund/PortfolioWeb/main/Frontend/public/assets/foams.jpg)`.trim()
     },
     {
         id: 'project4',
