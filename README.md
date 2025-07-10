@@ -16,7 +16,7 @@ terrible at frontend design and I most definitely vibe coded all the CSS for thi
 ![Foams](https://raw.githubusercontent.com/HugoEklund/PortfolioWeb/main/Frontend/public/assets/foams.jpg)
 
 ```csharp
-Console.Writeline("Code test")
+Console.Writeline("Code")
 ```
 
 Technical Stack and Development Details
