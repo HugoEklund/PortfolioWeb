@@ -46,19 +46,49 @@ The complete source code for the web application is available on [Github](https:
         color: '#F59E0B',
         description: 'A fullstack web application for managing vehicle data.',
         details:
-`
+`This project is a fullstack CRUD web application developed for a code interview.
 
-The complete source code for the web application is available on [Github](https://github.com/HugoEklund/Vehicle-Database).`.trim()
+The backend is an ASP.NET Core Web API written in C#. 
+It uses Entity Framework Core and a DbContext to interact with a SQL Server database (powered by MSSQL).
+
+The context class defines DbSet properties for each entity to be tracked:
+
+\`\`\`csharp
+public class VehicleContext : DbContext
+{
+    public VehicleContext(DbContextOptions<VehicleContext> options) : base(options) { }
+    
+    public DbSet<VehicleMake> VehicleMakes { get; set; }
+    public DbSet<VehicleModel> VehicleModels { get; set; }
+}
+\`\`\`
+
+The project makes use of Data Transfer Objects (DTOs) to avoid circular dependencies that otherwise would - and initially did - occur due to the nature of the
+database relations. The usage of the many-to-many and many-to-one relations are in part due to assignment requirements, 
+with the former being required and the latter being completely arbitrary.
+
+\`\`\`csharp
+public class VehicleModelDto
+{
+    public int Id { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public string Abrv { get; set; } = string.Empty;
+    public string MakeName { get; set; } = string.Empty;
+}
+\`\`\`
+
+The frontend is a React.js application built upon a Vite template, communicating with the backend API to fetch, 
+display, and manage the vehicle data.
+
+The complete source code for the fullstack application is available on [Github](https://github.com/HugoEklund/Vehicle-Database).`.trim()
     },
 
     {
         id: 'project4',
-        name: 'Monogame Shooter',
+        name: 'temp',
         color: '#8B5CF6',
-        description: 'A 2D endless runner built in C# using Monogame.',
+        description: 'Temp',
         details:
-`![Foams](https://raw.githubusercontent.com/HugoEklund/PortfolioWeb/main/Frontend/public/assets/foams.jpg)
-
-The complete source code for the web application is available on [Github](https://github.com/HugoEklund/Monogame-Shooter).`.trim()
+`![Foams](https://raw.githubusercontent.com/HugoEklund/PortfolioWeb/main/Frontend/public/assets/foams.jpg)`.trim()
     }
 ];
