@@ -32,7 +32,7 @@ The full paper can be found and read at [LUP Student Papers](https://lup.lub.lu.
     
     {
         id: 'project2',
-        name: 'Portfolio',
+        name: 'Portfolio Web page',
         color: '#10B981',
         description: 'The fullstack development of this website.',
         details: `${webDetails}
@@ -72,8 +72,30 @@ public class VehicleModelDto
 {
     public int Id { get; set; }
     public string Name { get; set; } = string.Empty;
-    public string Abrv { get; set; } = string.Empty;
-    public string MakeName { get; set; } = string.Empty;
+    ...
+}
+\`\`\`
+
+The backend provides endpoints for CRUD operations on the vehicle database given API requests from the frontend.
+
+\`\`\`csharp
+[HttpPost] 
+public async Task<ActionResult<Vehicle>> CreateVehicle(CreateVehicleDto dto)
+{
+    var existingBrand = await _vehicleContext.Brands.FindAsync(dto.BrandID);
+
+    if (existingBrand == null)
+    {
+        return NotFound();
+    }
+
+    var existingEquipments = await _vehicleContext.Equipments.Where(e => dto.EquipmentIDs.Contains(e.EquipmentID)).ToListAsync();
+    var newVehicle = new Vehicle { /*init vehicle*/ };
+
+    _vehicleContext.Vehicles.Add(newVehicle);
+    await _vehicleContext.SaveChangesAsync();
+    
+    return newVehicle;
 }
 \`\`\`
 

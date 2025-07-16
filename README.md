@@ -6,9 +6,7 @@ When new versions are pushed to the GitHub repository, a Webhook triggers a GET 
 This request activates a PHP script, which validates the request's SSH key and subsequently executes a bash script.
 
 ```php
-<?php
-exec('/volume1/home/Hugo/Scripts/deployPortfolio.sh > /dev/null 2>&1 &');
-?>
+exec('/volume1/home/Hugo/Scripts/deployPortfolio.sh > /dev/null 2>&1 &'); // logs are overrated
 ```
 
 The bash script is responsible for pulling the latest changes from the repository, building the web application, and then containerizing it using Docker. 
