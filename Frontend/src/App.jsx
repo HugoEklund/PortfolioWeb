@@ -153,7 +153,7 @@ const App = () => {
                                     About Me
                                 </h2>
                                 <p className="about-text">
-                                    Jag har inte duschat på 2 veckor
+                                    I use Vim btw
                                 </p>
                             </div>
                         </section>

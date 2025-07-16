@@ -104,13 +104,4 @@ display, and manage the vehicle data.
 
 The complete source code for the fullstack application is available on [Github](https://github.com/HugoEklund/Vehicle-Database).`.trim()
     },
-
-    {
-        id: 'project4',
-        name: 'temp',
-        color: '#8B5CF6',
-        description: 'Temp',
-        details:
-`![Foams](https://raw.githubusercontent.com/HugoEklund/PortfolioWeb/main/Frontend/public/assets/foams.jpg)`.trim()
-    }
 ];
