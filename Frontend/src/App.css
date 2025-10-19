@@ -406,7 +406,6 @@
     padding: 0.08rem;
 }
 .social-icon-img:hover {
-    background: linear-gradient(135deg, #00C9B1 0%, #8B5CF6 100%);
     transform: scale(1.15);
     box-shadow: 0 4px 16px rgba(0,201,177,0.18);
 }

@@ -138,13 +138,13 @@ const App = () => {
                                         </a>
                                     </div>
                                 </div>
-                                <div className="hero-image-wrapper">
+                                {/* <div className="hero-image-wrapper">
                                     <img
                                         src="/assets/selfie.png"
                                         alt="Hugo Eklund"
                                         className="hero-image"
                                     />
-                                </div>
+                                </div> */}
                             </div>
                         </section>
                         <section ref={aboutRef} className="about-section">
